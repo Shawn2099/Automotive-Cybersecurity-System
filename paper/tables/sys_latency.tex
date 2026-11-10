@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{Onset-to-alert latency through the full stack (simulator REST toggle $\rightarrow$ alert on /ws/live), 10 trials per scenario. ``Class set'' is the time until attack\_class leaves normal (attacks only).}
+\label{tab:sys_latency}
+\scriptsize
+\begin{tabular}{llrrrrlr}
+\toprule
+Scenario & Type & Det. (\%) & Median & p95 & Range & Unit & Class set (med.) \\
+\midrule
+dos & attack & 100 & 255 & 289 & 196--290 & ms & 255 \\
+fuzzy & attack & 100 & 192 & 273 & 162--287 & ms & 193 \\
+rpm\_spoof & attack & 100 & 164 & 197 & 131--198 & ms & 164 \\
+gear\_spoof & attack & 100 & 162 & 194 & 101--194 & ms & 163 \\
+steering\_spoof & attack & 100 & 164 & 182 & 113--194 & ms & 165 \\
+replay & tunnel & 100 & 92 & 172 & 46--174 & ms & 157 \\
+tamper & tunnel & 100 & 467 & 473 & 439--474 & ms & 547 \\
+wrong\_key & tunnel & 100 & 120 & 159 & 66--160 & ms & 121 \\
+sensor\_inconsistency & fault & 100 & 134 & 161 & 65--163 & ms & -- \\
+overheat & fault & 100 & 10.3 & 10.4 & 10.2--10.4 & s & -- \\
+battery\_drain & fault & 100 & 17.6 & 17.7 & 17.4--17.7 & s & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

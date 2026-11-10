@@ -1,0 +1,19 @@
+Benign traffic (control)                                3000/3000 accepted   {'accepted': 3000}
+Replay: same packet, same session                       1000/1000 rejected   {'ReplayError': 1000}
+Replay: older packet after newer ones                   1000/1000 rejected   {'ReplayError': 1000}
+Replay: packet into another session                     1000/1000 rejected   {'PacketCryptoError': 1000}
+Replay: undelivered packet into another session         1000/1000 rejected   {'PacketCryptoError': 1000}
+Ciphertext/tag bit-flip                                 1000/1000 rejected   {'PacketCryptoError': 1000}
+Bit-flip anywhere in message                            1000/1000 rejected   {'PacketCryptoError': 1000}
+Header tamper: seq increased                            1000/1000 rejected   {'PacketCryptoError': 1000}
+Header tamper: seq rewound                              1000/1000 rejected   {'PacketCryptoError': 1000}
+Header tamper: device\_id changed                       1000/1000 rejected   {'PacketCryptoError': 1000}
+Valid device 2 into device 1 session                    1000/1000 rejected   {'PacketCryptoError': 1000}
+Wrong PSK: handshake                                    1000/1000 rejected   {'HandshakeError': 1000}
+Wrong key: forged DATA in live session                  1000/1000 rejected   {'PacketCryptoError': 1000}
+Unknown device\_id: handshake                           1000/1000 rejected   {'HandshakeError': 1000}
+Captured HELLO replayed (new nonce)                     1000/1000 rejected   {'HandshakeError': 1000}
+Rogue server: forged WELCOME                            1000/1000 rejected   {'HandshakeError': 1000}
+Rogue server: wrong PSK                                 1000/1000 rejected   {'HandshakeError': 1000}
+Rogue server: replayed WELCOME                          1000/1000 rejected   {'HandshakeError': 1000}
+Truncated DATA message                                  1000/1000 rejected   {'PacketCryptoError': 1000}

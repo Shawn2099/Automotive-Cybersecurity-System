@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Rule-based detector on real HCRL traffic, 100~ms windows (all five captures pooled). A window is an attack window if it holds at least one injected frame. ``Settled'' drops windows within 0.7~s of a label change, where the 0.5~s rate smoothing still lags the label.}
+\label{tab:hcrl_rules_perclass}
+\begin{tabular}{lrrrrrrrr}
+\toprule
+& \multicolumn{4}{c}{All windows} & \multicolumn{4}{c}{Settled windows} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+Class & P & R & F1 & N & P & R & F1 & N \\
+\midrule
+Normal & 0.990 & 0.943 & 0.966 & 60,030 & 0.997 & 1.000 & 0.999 & 51,163 \\
+DoS & 0.956 & 0.983 & 0.970 & 14,056 & 1.000 & 0.992 & 0.996 & 11,827 \\
+Fuzzy & 0.952 & 0.994 & 0.973 & 15,822 & 1.000 & 1.000 & 1.000 & 13,615 \\
+Spoofing & 0.913 & 0.989 & 0.949 & 21,366 & 1.000 & 0.998 & 0.999 & 16,945 \\
+\midrule
+Macro avg &  &  & 0.964 &  &  &  & 0.998 &  \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{IsolationForest anomaly score on simulator data (normal random driving vs windows during each fault).}
+\label{tab:sys_anomaly}
+\footnotesize
+\begin{tabular}{lrrrrr}
+\toprule
+Condition & Windows & Median & p95 & $>$0.65 (\%) & AUROC vs normal \\
+\midrule
+normal driving & 5520 & 0.000 & -- & 0.00 & -- \\
+overheat & 4086 & 0.108 & 0.476 & 0.0 & 0.722 \\
+battery\_drain & 4086 & 0.051 & 0.401 & 0.0 & 0.599 \\
+sensor\_inconsistency & 4086 & 0.481 & 0.736 & 9.6 & 0.988 \\
+\bottomrule
+\end{tabular}
+\end{table}

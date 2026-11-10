@@ -1,0 +1,202 @@
+{
+  "50": {
+    "window_ms": 50,
+    "detect_rate": 1.0,
+    "intrusions": 1200,
+    "detected": 1200,
+    "latency_median_ms": 55.758595466542715,
+    "latency_p95_ms": 141.984486579895,
+    "latency_max_ms": 470.444869995049,
+    "false_alerts_outside": 0,
+    "false_alerts_per_hour": 0.0,
+    "normal_run_cyber_alerts": 0,
+    "macro_f1_all": 0.9543283368780449,
+    "macro_f1_settled": 0.9987634319671642,
+    "f1_settled": {
+      "normal": 0.9990059405752227,
+      "dos": 0.997162820241372,
+      "fuzzy": 0.9999446320801727,
+      "spoofing": 0.9989403349718894
+    },
+    "per_attack": {
+      "DoS_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 55.25937080381027,
+        "p95_ms": 261.7177391052479,
+        "max_ms": 470.444869995049
+      },
+      "Fuzzy_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 51.49400234222412,
+        "p95_ms": 148.6225366591498,
+        "max_ms": 295.14503479003906
+      },
+      "RPM_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 58.16452503199798,
+        "p95_ms": 80.90692043295462,
+        "max_ms": 195.38898468022126
+      },
+      "gear_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 58.07602405548096,
+        "p95_ms": 90.7479548453413,
+        "max_ms": 451.5368938446045
+      }
+    }
+  },
+  "100": {
+    "window_ms": 100,
+    "detect_rate": 1.0,
+    "intrusions": 1200,
+    "detected": 1200,
+    "latency_median_ms": 81.16750717152854,
+    "latency_p95_ms": 151.91368103017973,
+    "latency_max_ms": 470.44486999516266,
+    "false_alerts_outside": 0,
+    "false_alerts_per_hour": 0.0,
+    "normal_run_cyber_alerts": 0,
+    "macro_f1_all": 0.964402626721466,
+    "macro_f1_settled": 0.998270331409233,
+    "f1_settled": {
+      "normal": 0.9986044559818091,
+      "dos": 0.9957544366137386,
+      "fuzzy": 0.9999632744500349,
+      "spoofing": 0.9987591585913496
+    },
+    "per_attack": {
+      "DoS_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 83.75093936911071,
+        "p95_ms": 256.35418415069756,
+        "max_ms": 470.44486999516266
+      },
+      "Fuzzy_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 78.99756431578453,
+        "p95_ms": 161.9722652434007,
+        "max_ms": 321.30899429330384
+      },
+      "RPM_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 78.89554500582108,
+        "p95_ms": 124.81443405153527,
+        "max_ms": 195.38898467999388
+      },
+      "gear_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 81.27608299245992,
+        "p95_ms": 129.18748378753696,
+        "max_ms": 451.5368938446045
+      }
+    }
+  },
+  "200": {
+    "window_ms": 200,
+    "detect_rate": 1.0,
+    "intrusions": 1200,
+    "detected": 1200,
+    "latency_median_ms": 136.190915107818,
+    "latency_p95_ms": 242.07924127591684,
+    "latency_max_ms": 662.1549606323072,
+    "false_alerts_outside": 0,
+    "false_alerts_per_hour": 0.0,
+    "normal_run_cyber_alerts": 0,
+    "macro_f1_all": 0.9662034330636508,
+    "macro_f1_settled": 0.9979521253426605,
+    "f1_settled": {
+      "normal": 0.9983063959688042,
+      "dos": 0.9947979885555748,
+      "fuzzy": 0.9999252671698677,
+      "spoofing": 0.9987788496763952
+    },
+    "per_attack": {
+      "DoS_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 142.9439544676825,
+        "p95_ms": 364.5970821380615,
+        "max_ms": 662.1549606323072
+      },
+      "Fuzzy_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 130.76353073120117,
+        "p95_ms": 251.4804267883733,
+        "max_ms": 488.20104598962644
+      },
+      "RPM_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 133.97414684303044,
+        "p95_ms": 225.8585524558839,
+        "max_ms": 263.0500793457031
+      },
+      "gear_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 134.22548770910225,
+        "p95_ms": 231.28314495086784,
+        "max_ms": 551.5368938447409
+      }
+    }
+  },
+  "500": {
+    "window_ms": 500,
+    "detect_rate": 1.0,
+    "intrusions": 1200,
+    "detected": 1200,
+    "latency_median_ms": 271.81994915008545,
+    "latency_p95_ms": 507.17486143112177,
+    "latency_max_ms": 1547.7428436279297,
+    "false_alerts_outside": 0,
+    "false_alerts_per_hour": 0.0,
+    "normal_run_cyber_alerts": 0,
+    "macro_f1_all": 0.9826602847066956,
+    "macro_f1_settled": 0.9799908646769744,
+    "f1_settled": {
+      "normal": 0.9809135184941424,
+      "dos": 0.9693339722089123,
+      "fuzzy": 0.983785974868261,
+      "spoofing": 0.985929993136582
+    },
+    "per_attack": {
+      "DoS_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 304.79490756988525,
+        "p95_ms": 512.6856207847595,
+        "max_ms": 1547.7428436279297
+      },
+      "Fuzzy_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 266.21198654174805,
+        "p95_ms": 510.02756357192993,
+        "max_ms": 661.0310077667236
+      },
+      "RPM_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 254.60052490234375,
+        "p95_ms": 500.07508993148804,
+        "max_ms": 524.7840881347656
+      },
+      "gear_dataset.csv": {
+        "intrusions": 300,
+        "detected": 300,
+        "median_ms": 260.5705261230469,
+        "p95_ms": 496.06325626373297,
+        "max_ms": 635.1580619812012
+      }
+    }
+  }
+}

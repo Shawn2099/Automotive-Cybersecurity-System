@@ -1,0 +1,256 @@
+{
+ "machine": {
+  "cpu": "Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz",
+  "os": "Windows-10-10.0.26300-SP0",
+  "python": "3.11.9",
+  "python_impl": "CPython",
+  "libs": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "matplotlib": "3.11.2",
+   "cryptography": "50.0.2",
+   "fastapi": "0.162.3",
+   "uvicorn": "0.54.0",
+   "websockets": "17.2",
+   "httpx": "0.28.1",
+   "scikit-learn": "1.9.1",
+   "psutil": "7.2.2"
+  },
+  "cpu_cores_physical": 4,
+  "cpu_threads": 8,
+  "ram_gb": 23.9,
+  "on_ac_power": null,
+  "timestamp": "2026-11-11 00:44:47"
+ },
+ "trials_per_test": 1000,
+ "tests": [
+  {
+   "test": "Benign traffic (control)",
+   "expected": "accept",
+   "trials": 3000,
+   "accepted": 3000,
+   "rejected": 0,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "accepted": 3000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Replay: same packet, same session",
+   "expected": "reject (ReplayError)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "ReplayError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Replay: older packet after newer ones",
+   "expected": "reject (ReplayError)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "ReplayError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Replay: packet into another session",
+   "expected": "reject (tag mismatch)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Replay: undelivered packet into another session",
+   "expected": "reject (tag mismatch)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Ciphertext/tag bit-flip",
+   "expected": "reject (tag mismatch)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Bit-flip anywhere in message",
+   "expected": "reject",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Header tamper: seq increased",
+   "expected": "reject (tag mismatch)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Header tamper: seq rewound",
+   "expected": "reject",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Header tamper: device_id changed",
+   "expected": "reject (tag mismatch)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Valid device 2 into device 1 session",
+   "expected": "reject",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Wrong PSK: handshake",
+   "expected": "reject (bad HELLO MAC)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "HandshakeError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Wrong key: forged DATA in live session",
+   "expected": "reject (tag mismatch)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Unknown device_id: handshake",
+   "expected": "reject (unknown device)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "HandshakeError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Captured HELLO replayed (new nonce)",
+   "expected": "reject (bad HELLO MAC)",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "HandshakeError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Rogue server: forged WELCOME",
+   "expected": "client rejects",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "HandshakeError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Rogue server: wrong PSK",
+   "expected": "client rejects",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "HandshakeError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Rogue server: replayed WELCOME",
+   "expected": "client rejects",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "HandshakeError": 1000
+   },
+   "unexpected_exceptions": 0
+  },
+  {
+   "test": "Truncated DATA message",
+   "expected": "reject",
+   "trials": 1000,
+   "accepted": 0,
+   "rejected": 1000,
+   "success_rate_pct": 100.0,
+   "outcomes": {
+    "PacketCryptoError": 1000
+   },
+   "unexpected_exceptions": 0
+  }
+ ]
+}

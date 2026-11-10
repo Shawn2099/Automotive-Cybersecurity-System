@@ -1,0 +1,385 @@
+{
+ "machine": {
+  "cpu": "Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz",
+  "os": "Windows-10-10.0.26300-SP0",
+  "python": "3.11.9",
+  "python_impl": "CPython",
+  "libs": {
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "matplotlib": "3.11.2",
+   "cryptography": "50.0.2",
+   "fastapi": "0.162.3",
+   "uvicorn": "0.54.0",
+   "websockets": "17.2",
+   "httpx": "0.28.1",
+   "scikit-learn": "1.9.1",
+   "psutil": "7.2.2"
+  },
+  "cpu_cores_physical": 4,
+  "cpu_threads": 8,
+  "ram_gb": 23.9,
+  "on_ac_power": null,
+  "timestamp": "2026-11-11 01:20:58"
+ },
+ "models_loaded": true,
+ "timeseries_summary": {
+  "overheat": {
+   "fault_on_s": 10,
+   "fault_off_s": 42,
+   "first_alerts": {
+    "overheat": 20.100000000000144
+   },
+   "min_overall_health": 53,
+   "overall_health_end": 100,
+   "alerts": [
+    {
+     "t": 20.100000000000144,
+     "category": "overheat",
+     "severity": "medium"
+    },
+    {
+     "t": 23.100000000000186,
+     "category": "overheat",
+     "severity": "high"
+    },
+    {
+     "t": 33.10000000000033,
+     "category": "overheat",
+     "severity": "high"
+    },
+    {
+     "t": 43.10000000000047,
+     "category": "overheat",
+     "severity": "high"
+    }
+   ]
+  },
+  "battery_drain": {
+   "fault_on_s": 10,
+   "fault_off_s": 42,
+   "first_alerts": {
+    "low_battery": 27.50000000000025,
+    "forecast_battery": 28.600000000000264
+   },
+   "min_overall_health": 53,
+   "overall_health_end": 100,
+   "alerts": [
+    {
+     "t": 27.50000000000025,
+     "category": "low_battery",
+     "severity": "medium"
+    },
+    {
+     "t": 28.600000000000264,
+     "category": "forecast_battery",
+     "severity": "medium"
+    },
+    {
+     "t": 30.800000000000296,
+     "category": "low_battery",
+     "severity": "high"
+    },
+    {
+     "t": 40.80000000000044,
+     "category": "low_battery",
+     "severity": "high"
+    }
+   ]
+  },
+  "sensor_inconsistency": {
+   "fault_on_s": 10,
+   "fault_off_s": 42,
+   "first_alerts": {
+    "sensor_inconsistency": 10.1
+   },
+   "min_overall_health": 72,
+   "overall_health_end": 100,
+   "alerts": [
+    {
+     "t": 10.1,
+     "category": "sensor_inconsistency",
+     "severity": "medium"
+    },
+    {
+     "t": 20.100000000000144,
+     "category": "sensor_inconsistency",
+     "severity": "medium"
+    },
+    {
+     "t": 30.100000000000286,
+     "category": "sensor_inconsistency",
+     "severity": "medium"
+    },
+    {
+     "t": 40.10000000000043,
+     "category": "sensor_inconsistency",
+     "severity": "medium"
+    }
+   ]
+  }
+ },
+ "forecast": {
+  "definition": "points are (predicted ETA, actual remaining time to threshold) from every window with a forecast",
+  "conditions": "30 trials nominal fault rate + 30 trials with fault slope scaled U(0.3,2.5) (harness-only); random start values/seeds",
+  "thresholds": {
+   "coolant_c": 110.0,
+   "battery_v": 11.4
+  },
+  "coolant_c": {
+   "n_trials": 60,
+   "n_points": 5964,
+   "mae_s": 16.455264922870516,
+   "median_abs_err_s": 4.699999999999986,
+   "bias_s": 16.415660630449317,
+   "rmse_s": 32.92095873162752,
+   "first_forecast_mae_s": 144.625,
+   "first_forecast_actual_remaining_median_s": 10.79999999999999,
+   "trials_with_forecast_alert": 59,
+   "forecast_alert_lead_median_s": 9.799999999999997,
+   "threshold_alert_lead_median_s": 3.100000000000022,
+   "by_remaining": {
+    "0-5": {
+     "n": 2377,
+     "mae_s": 2.8299957930163924,
+     "bias_s": 2.7573832562052827
+    },
+    "5-10": {
+     "n": 2211,
+     "mae_s": 16.361601085481652,
+     "bias_s": 16.34025327905922
+    },
+    "10-20": {
+     "n": 1168,
+     "mae_s": 43.33184931506843,
+     "bias_s": 43.31780821917801
+    },
+    "20-40": {
+     "n": 200,
+     "mae_s": 18.154999999999596,
+     "bias_s": 18.154999999999596
+    },
+    "40-inf": {
+     "n": 8,
+     "mae_s": 124.27499999999957,
+     "bias_s": 124.27499999999957
+    }
+   },
+   "nominal": {
+    "n_trials": 30,
+    "n_points": 3468,
+    "mae_s": 15.706949250288323,
+    "median_abs_err_s": 4.599999999999982,
+    "bias_s": 15.675346020761216,
+    "rmse_s": 32.01166981019434,
+    "first_forecast_mae_s": 148.21666666666664,
+    "first_forecast_actual_remaining_median_s": 11.25,
+    "trials_with_forecast_alert": 30,
+    "forecast_alert_lead_median_s": 10.250000000000004,
+    "threshold_alert_lead_median_s": 3.1999999999999886,
+    "by_remaining": {
+     "0-5": {
+      "n": 1450,
+      "mae_s": 1.5645517241379137,
+      "bias_s": 1.4889655172413592
+     },
+     "5-10": {
+      "n": 1363,
+      "mae_s": 13.297212032281701,
+      "bias_s": 13.297212032281701
+     },
+     "10-20": {
+      "n": 655,
+      "mae_s": 52.02900763358774,
+      "bias_s": 52.02900763358774
+     }
+    }
+   },
+   "randomised_rate": {
+    "n_trials": 30,
+    "n_points": 2496,
+    "mae_s": 17.49499198717942,
+    "median_abs_err_s": 4.999999999999767,
+    "bias_s": 17.444270833333263,
+    "rmse_s": 34.14417319692014,
+    "first_forecast_mae_s": 141.03333333333333,
+    "first_forecast_actual_remaining_median_s": 8.44999999999997,
+    "trials_with_forecast_alert": 29,
+    "forecast_alert_lead_median_s": 7.999999999999972,
+    "threshold_alert_lead_median_s": 2.550000000000013,
+    "by_remaining": {
+     "0-5": {
+      "n": 927,
+      "mae_s": 4.809385113268598,
+      "bias_s": 4.74142394822005
+     },
+     "5-10": {
+      "n": 848,
+      "mae_s": 21.287028301886767,
+      "bias_s": 21.231367924528268
+     },
+     "10-20": {
+      "n": 513,
+      "mae_s": 32.227290448343,
+      "bias_s": 32.1953216374268
+     },
+     "20-40": {
+      "n": 200,
+      "mae_s": 18.154999999999596,
+      "bias_s": 18.154999999999596
+     },
+     "40-inf": {
+      "n": 8,
+      "mae_s": 124.27499999999957,
+      "bias_s": 124.27499999999957
+     }
+    }
+   }
+  },
+  "battery_v": {
+   "n_trials": 60,
+   "n_points": 11034,
+   "mae_s": 15.240375203915049,
+   "median_abs_err_s": 3.4999999999998295,
+   "bias_s": 15.153153887982464,
+   "rmse_s": 33.81207998281351,
+   "first_forecast_mae_s": 183.5683333333332,
+   "first_forecast_actual_remaining_median_s": 17.650000000000095,
+   "trials_with_forecast_alert": 60,
+   "forecast_alert_lead_median_s": 15.900000000000102,
+   "threshold_alert_lead_median_s": 3.4000000000000483,
+   "by_remaining": {
+    "0-5": {
+     "n": 2455,
+     "mae_s": 0.7890835030549659,
+     "bias_s": 0.6663951120162654
+    },
+    "5-10": {
+     "n": 2629,
+     "mae_s": 6.924762267021608,
+     "bias_s": 6.8656523392924305
+    },
+    "10-20": {
+     "n": 3822,
+     "mae_s": 24.799476713762324,
+     "bias_s": 24.727472527472404
+    },
+    "20-40": {
+     "n": 1441,
+     "mae_s": 17.471131158917164,
+     "bias_s": 17.311103400416073
+    },
+    "40-inf": {
+     "n": 687,
+     "mae_s": 40.84483260553083,
+     "bias_s": 40.84483260553083
+    }
+   },
+   "nominal": {
+    "n_trials": 30,
+    "n_points": 5388,
+    "mae_s": 15.65048255382322,
+    "median_abs_err_s": 3.999999999999873,
+    "bias_s": 15.629769858945712,
+    "rmse_s": 33.95855366090998,
+    "first_forecast_mae_s": 183.8833333333332,
+    "first_forecast_actual_remaining_median_s": 18.450000000000106,
+    "trials_with_forecast_alert": 30,
+    "forecast_alert_lead_median_s": 16.550000000000114,
+    "threshold_alert_lead_median_s": 3.4000000000000483,
+    "by_remaining": {
+     "0-5": {
+      "n": 1453,
+      "mae_s": 0.6533379215416085,
+      "bias_s": 0.5765313145216433
+     },
+     "5-10": {
+      "n": 1500,
+      "mae_s": 3.0773333333332356,
+      "bias_s": 3.0773333333332356
+     },
+     "10-20": {
+      "n": 2333,
+      "mae_s": 29.068924132018736,
+      "bias_s": 29.068924132018736
+     },
+     "20-40": {
+      "n": 102,
+      "mae_s": 107.27156862745083,
+      "bias_s": 107.27156862745083
+     }
+    }
+   },
+   "randomised_rate": {
+    "n_trials": 30,
+    "n_points": 5646,
+    "mae_s": 14.849008147360815,
+    "median_abs_err_s": 2.7999999999998906,
+    "bias_s": 14.698317392844318,
+    "rmse_s": 33.67170542183556,
+    "first_forecast_mae_s": 183.2533333333332,
+    "first_forecast_actual_remaining_median_s": 14.550000000000047,
+    "trials_with_forecast_alert": 30,
+    "forecast_alert_lead_median_s": 13.000000000000052,
+    "threshold_alert_lead_median_s": 2.5500000000000362,
+    "by_remaining": {
+     "0-5": {
+      "n": 1002,
+      "mae_s": 0.9859281437125591,
+      "bias_s": 0.7967065868263313
+     },
+     "5-10": {
+      "n": 1129,
+      "mae_s": 12.036492471213421,
+      "bias_s": 11.898848538529627
+     },
+     "10-20": {
+      "n": 1489,
+      "mae_s": 18.11000671591664,
+      "bias_s": 17.925184687709752
+     },
+     "20-40": {
+      "n": 1339,
+      "mae_s": 10.63047050037315,
+      "bias_s": 10.458252427184153
+     },
+     "40-inf": {
+      "n": 687,
+      "mae_s": 40.84483260553083,
+      "bias_s": 40.84483260553083
+     }
+    }
+   }
+  }
+ },
+ "anomaly": {
+  "threshold": 0.65,
+  "normal": {
+   "n": 5520,
+   "median": 0.0,
+   "p99": 0.367,
+   "frac_over_thr": 0.0
+  },
+  "overheat": {
+   "n": 4086,
+   "median": 0.108,
+   "p95": 0.476,
+   "frac_over_thr": 0.0,
+   "auroc_vs_normal": 0.7223980834166863
+  },
+  "battery_drain": {
+   "n": 4086,
+   "median": 0.051,
+   "p95": 0.40125,
+   "frac_over_thr": 0.0,
+   "auroc_vs_normal": 0.5994103673200112
+  },
+  "sensor_inconsistency": {
+   "n": 4086,
+   "median": 0.481,
+   "p95": 0.736,
+   "frac_over_thr": 0.09618208516886931,
+   "auroc_vs_normal": 0.9881675986223727
+  }
+ }
+}

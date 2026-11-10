@@ -1,0 +1,3 @@
+  [cache] transfer_sims built in 67 s
+{'synth_nominal': {'hcrl_heldout': 0.319, 'fresh_measured': 0.243, 'fresh_nominal': 1.0}, 'synth_measured': {'hcrl_heldout': 0.958, 'fresh_measured': 1.0, 'fresh_nominal': 0.845}, 'hcrl': {'hcrl_heldout': 1.0, 'fresh_measured': 1.0, 'fresh_nominal': 1.0}, 'hcrl_synth_measured': {'hcrl_heldout': 1.0, 'fresh_measured': 1.0, 'fresh_nominal': 1.0}}
+{'synth_nominal': {'hcrl_heldout': 0.324, 'fresh_measured': 0.236, 'fresh_nominal': 0.954}, 'synth_measured': {'hcrl_heldout': 0.939, 'fresh_measured': 0.955, 'fresh_nominal': 0.817}, 'hcrl': {'hcrl_heldout': 0.968, 'fresh_measured': 0.962, 'fresh_nominal': 0.962}, 'hcrl_synth_measured': {'hcrl_heldout': 0.968, 'fresh_measured': 0.962, 'fresh_nominal': 0.962}}

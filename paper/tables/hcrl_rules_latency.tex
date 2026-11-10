@@ -1,0 +1,19 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Per-intrusion detection by the rule engine. Latency = time from the first injected frame to the first alert of the matching category; it is quantised by the 100~ms batch, so the floor is one window. Alerts outside intrusions are counted from 1~s after a burst ends.}
+\label{tab:hcrl_rules_latency}
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+& & & & & \multicolumn{3}{c}{Latency (ms)} & \multicolumn{2}{c}{Extra alerts} \\
+\cmidrule(lr){6-8}\cmidrule(lr){9-10}
+Attack & Intrus. & Detected & Rate (\%) & 95\% CI (\%) & Med. & P95 & Max & False & Wrong cl. \\
+\midrule
+DoS & 300 & 300 & 100.0 & 98.7--100.0 & 84 & 256 & 470 & 0 & 0 \\
+Fuzzy & 300 & 300 & 100.0 & 98.7--100.0 & 79 & 162 & 321 & 0 & 0 \\
+RPM spoof & 300 & 300 & 100.0 & 98.7--100.0 & 79 & 125 & 195 & 0 & 0 \\
+Gear spoof & 300 & 300 & 100.0 & 98.7--100.0 & 81 & 129 & 452 & 0 & 0 \\
+\bottomrule
+\end{tabular}
+\par\smallskip\parbox{0.95\linewidth}{\footnotesize Med./P95/Max in ms. False = cyber alerts outside intrusions; Wrong cl. = alerts of another category during a burst.}
+\end{table}

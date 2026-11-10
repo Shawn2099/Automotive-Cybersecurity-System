@@ -1,0 +1,15 @@
+\begin{table}[t]
+\centering
+\caption{Packet ingest-to-broadcast latency in ms (client send $\rightarrow$ /ws/live receipt, loopback) and median in-process time per server stage in ms.}
+\label{tab:sys_ingest_latency}
+\scriptsize
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Traffic & Med. & p95 & p99 & Max & Decrypt & Decode & Analytics & JSON \\
+\midrule
+normal & 13.7 & 34.7 & 36.9 & 46.9 & 0.07 & 0.06 & 11.66 & 0.08 \\
+dos & 13.6 & 36.2 & 38.4 & 41.2 & 0.06 & 0.04 & 11.45 & 0.06 \\
+fuzzy & 13.8 & 35.4 & 37.4 & 37.8 & 0.08 & 0.07 & 4.44 & 0.09 \\
+\bottomrule
+\end{tabular}
+\end{table}

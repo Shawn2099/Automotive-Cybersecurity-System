@@ -1,0 +1,192 @@
+{
+  "files": {
+    "DoS_dataset.csv": {
+      "duration_s": 2810.3112499713898,
+      "span_s": 2832.6695170402527,
+      "timestamp_jumps": 1,
+      "jump_total_s": 22.358267068862915,
+      "frames": 3665771,
+      "distinct_ids": 27,
+      "injected_frames": 587521,
+      "intrusions": 300,
+      "frames_per_s": 1304.4003578028303,
+      "top_id": 0,
+      "top_id_share": 1.0,
+      "distinct_injected_ids": 1,
+      "top_payload": "0000000000000000",
+      "top_payload_share": 1.0,
+      "median_duration_s": 4.563207030296326,
+      "median_inject_fps": 388.35829208140365,
+      "median_legit_retained": 0.17540829281793435,
+      "legit_retained_p5_p95": [
+        0.07380503286525715,
+        0.3722997084926559
+      ],
+      "attack_target": "0x000 / 00 00 00 00 00 00 00 00",
+      "median_gap_between_intrusions_s": 3.0036540031433105
+    },
+    "Fuzzy_dataset.csv": {
+      "duration_s": 2947.6727588176727,
+      "span_s": 5487.1550669670105,
+      "timestamp_jumps": 1,
+      "jump_total_s": 2539.4823081493378,
+      "frames": 3838860,
+      "distinct_ids": 2048,
+      "injected_frames": 491847,
+      "intrusions": 300,
+      "frames_per_s": 1302.3358812529066,
+      "top_id": 802,
+      "top_id_share": 0.000597746860304119,
+      "distinct_injected_ids": 2048,
+      "top_payload": "8CABF2267A291A0C",
+      "top_payload_share": 2.033152586068432e-06,
+      "median_duration_s": 5.187330961227417,
+      "median_inject_fps": 239.73587201492245,
+      "median_legit_retained": 0.20266887884121731,
+      "legit_retained_p5_p95": [
+        0.08396570058651967,
+        0.5588056486358636
+      ],
+      "attack_target": "random (2048 IDs)",
+      "median_gap_between_intrusions_s": 3.0078089237213135
+    },
+    "RPM_dataset.csv": {
+      "duration_s": 2434.079043865204,
+      "span_s": 10179.013829946518,
+      "timestamp_jumps": 1,
+      "jump_total_s": 7744.934786081314,
+      "frames": 4621702,
+      "distinct_ids": 26,
+      "injected_frames": 654897,
+      "intrusions": 300,
+      "frames_per_s": 1898.7477056870564,
+      "top_id": 790,
+      "top_id_share": 1.0,
+      "distinct_injected_ids": 1,
+      "top_payload": "452924FF292400FF",
+      "top_payload_share": 1.0,
+      "median_duration_s": 3.45847749710083,
+      "median_inject_fps": 646.5947408835112,
+      "median_legit_retained": 0.7508746454446777,
+      "legit_retained_p5_p95": [
+        0.43862910507990915,
+        0.9464497925669633
+      ],
+      "attack_target": "0x316 / 45 29 24 FF 29 24 00 FF",
+      "median_gap_between_intrusions_s": 3.0047900676727295
+    },
+    "gear_dataset.csv": {
+      "duration_s": 2430.8765330314636,
+      "span_s": 8019.002377986908,
+      "timestamp_jumps": 1,
+      "jump_total_s": 5588.125844955444,
+      "frames": 4443142,
+      "distinct_ids": 26,
+      "injected_frames": 597252,
+      "intrusions": 300,
+      "frames_per_s": 1827.7941884852162,
+      "top_id": 1087,
+      "top_id_share": 1.0,
+      "distinct_injected_ids": 1,
+      "top_payload": "014560FF6B000000",
+      "top_payload_share": 1.0,
+      "median_duration_s": 3.44399631023407,
+      "median_inject_fps": 601.6548833389904,
+      "median_legit_retained": 0.7033146831730357,
+      "legit_retained_p5_p95": [
+        0.3186847235349245,
+        0.8959791283369285
+      ],
+      "attack_target": "0x43F / 01 45 60 FF 6B 00 00 00",
+      "median_gap_between_intrusions_s": 3.0050981044769287
+    },
+    "normal_run_data.txt": {
+      "duration_s": 506.43657088279724,
+      "span_s": 506.43657088279724,
+      "timestamp_jumps": 0,
+      "jump_total_s": 0.0,
+      "frames": 988871,
+      "distinct_ids": 27,
+      "injected_frames": 0,
+      "intrusions": 0,
+      "frames_per_s": 1952.6058283592058
+    }
+  },
+  "normal_per_id_hz": {
+    "0x2C0": 100.08953324923047,
+    "0x18F": 100.0855840873512,
+    "0x260": 100.0855840873512,
+    "0x316": 100.0855840873512,
+    "0x2A0": 100.0855840873512,
+    "0x329": 100.08360950641156,
+    "0x545": 100.08360950641156,
+    "0x350": 100.03424498292065,
+    "0x130": 100.00660084976575,
+    "0x131": 100.00660084976575,
+    "0x153": 100.00660084976575,
+    "0x140": 100.00660084976575,
+    "0x002": 100.00660084976575,
+    "0x43F": 99.99475336412793,
+    "0x370": 99.99475336412793,
+    "0x440": 99.99475336412793,
+    "0x2B0": 99.92564303124065,
+    "0x430": 50.00428771535269,
+    "0x1F1": 50.00428771535269,
+    "0x4B1": 50.00428771535269,
+    "0x4F0": 50.00033855347342,
+    "0x5F0": 20.000530337577295,
+    "0x0A1": 10.007176202077375,
+    "0x0A0": 10.007176202077375,
+    "0x690": 9.999277878318829,
+    "0x5A0": 1.0011125363956648,
+    "0x5A2": 1.0011125363956648
+  },
+  "normal_total_hz": 1952.6058283592058,
+  "profile_messages_on_hcrl_bus": [
+    "0x260",
+    "0x2B0",
+    "0x316",
+    "0x329",
+    "0x43F"
+  ],
+  "fastest_legit_hz": 100.08953324923047,
+  "representative_intrusions": {
+    "DoS_dataset.csv": {
+      "intrusion_index": 150,
+      "of": 300,
+      "t_start_s": 1139.1484460830688,
+      "duration_s": 4.497246026992798,
+      "injected_frames": 1834,
+      "mean_legit_fps_in_burst": 337.3175474267709,
+      "mean_legit_fps_before": 1853.3333333333333
+    },
+    "Fuzzy_dataset.csv": {
+      "intrusion_index": 150,
+      "of": 300,
+      "t_start_s": 1230.4353120326996,
+      "duration_s": 4.98014497756958,
+      "injected_frames": 2280,
+      "mean_legit_fps_in_burst": 726.0832799619997,
+      "mean_legit_fps_before": 1850.0
+    },
+    "RPM_dataset.csv": {
+      "intrusion_index": 150,
+      "of": 300,
+      "t_start_s": 970.669627904892,
+      "duration_s": 3.5386691093444824,
+      "injected_frames": 2184,
+      "mean_legit_fps_in_burst": 1344.2907073278761,
+      "mean_legit_fps_before": 1852.2222222222222
+    },
+    "gear_dataset.csv": {
+      "intrusion_index": 150,
+      "of": 300,
+      "t_start_s": 969.917711019516,
+      "duration_s": 3.497323989868164,
+      "injected_frames": 1562,
+      "mean_legit_fps_in_burst": 992.1871722644736,
+      "mean_legit_fps_before": 1852.2222222222222
+    }
+  },
+  "representative_rule": "middle intrusion of each capture (index = n_intrusions // 2, intrusions longer than 0.5 s)"
+}

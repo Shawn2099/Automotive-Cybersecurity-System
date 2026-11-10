@@ -1,0 +1,3 @@
+parsing 5 HCRL file(s) into 100 ms windows (cached afterwards) ...
+  [cache] rules_replay_100ms built in 27 s
+{'macro_all': 0.964402626721466, 'macro_settled': 0.998270331409233, 'detected': '1200/1200'}

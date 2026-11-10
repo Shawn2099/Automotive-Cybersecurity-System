@@ -1,0 +1,7 @@
+  DoS_dataset.csv: 28101 windows, labels {np.str_('dos'): np.int64(14056), np.str_('normal'): np.int64(14045)}
+  Fuzzy_dataset.csv: 29464 windows, labels {np.str_('fuzzy'): np.int64(15822), np.str_('normal'): np.int64(13642)}
+  gear_dataset.csv: 24308 windows, labels {np.str_('normal'): np.int64(13645), np.str_('spoofing'): np.int64(10663)}
+  normal_run_data.txt: 5065 windows, labels {np.str_('normal'): np.int64(5065)}
+  RPM_dataset.csv: 24336 windows, labels {np.str_('normal'): np.int64(13633), np.str_('spoofing'): np.int64(10703)}
+  [cache] hcrl_features built in 23 s
+{'hcrl_only': (0.9682026853099734, 1.0), 'deployed': (0.9681228666809543, 1.0), 'hcrl_plus_synth_retrained': (0.9681228666809543, 1.0)} ablation 0.9692385682675559 {'DoS_dataset.csv': 23, 'Fuzzy_dataset.csv': 30, 'gear_dataset.csv': 18, 'normal_run_data.txt': 0, 'RPM_dataset.csv': 18}

@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\caption{Cross-domain transfer of the RandomForest: macro-F1 over {normal, DoS, fuzzy, spoofing}, settled windows, mean $\pm$ s.d. over 5 simulator seeds (HCRL-only has no simulator seed on the HCRL hold-out, so it has no s.d.). Rows: training data. Columns: test data. ``Nominal'' simulator = injection at the published rates with all legitimate traffic surviving; ``measured'' = injection rate and legitimate-traffic loss taken from the HCRL captures.}
+\label{tab:hcrl_transfer_settled}
+\begin{tabular}{lrrr}
+\toprule
+Trained on & HCRL hold-out & Fresh sim. (measured) & Fresh sim. (nominal) \\
+\midrule
+Sim. nominal & 0.319 $\pm$ 0.033 & 0.243 $\pm$ 0.052 & 1.000 $\pm$ 0.000 \\
+Sim. measured & 0.958 $\pm$ 0.003 & 1.000 $\pm$ 0.000 & 0.845 $\pm$ 0.127 \\
+HCRL & 1.000 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 \\
+HCRL + sim. measured & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 & 1.000 $\pm$ 0.000 \\
+\bottomrule
+\end{tabular}
+\end{table}

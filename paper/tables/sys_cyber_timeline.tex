@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering
+\caption{Scripted 90~s scenario: delays are measured from burst onset. Outside bursts (340 windows) the maximum risk was 13 and 0 windows had a non-normal class.}
+\label{tab:sys_cyber_timeline}
+\scriptsize
+\begin{tabular}{lrrrrrrr}
+\toprule
+Burst & Window (s) & 1st alert (s) & Risk$\geq$50 (s) & Class ok (s) & Peak risk & Class ok (\%) & Recovery (s) \\
+\midrule
+dos & 10--18 & 0.1 & 1.0 & 0.1 & 95 & 99 & 3.1 \\
+fuzzy & 28--36 & 0.1 & 1.0 & 0.1 & 90 & 99 & 3.0 \\
+rpm\_spoof & 46--54 & 0.0 & 1.0 & 0.0 & 85 & 100 & 3.0 \\
+tamper & 64--72 & 0.0 & 1.2 & 0.0 & 80 & 100 & 5.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

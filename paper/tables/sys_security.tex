@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\caption{Tunnel security property tests (1000 independent trials each, in-process via \texttt{common.tunnel}). Rate is the share of trials with the expected outcome (accept for the control, reject otherwise).}
+\label{tab:sys_security}
+\scriptsize
+\begin{tabular}{p{3.3cm}p{2.4cm}p{1.7cm}r}
+\toprule
+Attack & Expected & Observed & Rate (\%) \\
+\midrule
+Benign traffic (control) & accept & 3000/3000 accepted & 100.0 \\
+Replay: same packet, same session & reject (ReplayError) & 1000/1000 rejected & 100.0 \\
+Replay: older packet after newer ones & reject (ReplayError) & 1000/1000 rejected & 100.0 \\
+Replay: packet into another session & reject (tag mismatch) & 1000/1000 rejected & 100.0 \\
+Replay: undelivered packet into another session & reject (tag mismatch) & 1000/1000 rejected & 100.0 \\
+Ciphertext/tag bit-flip & reject (tag mismatch) & 1000/1000 rejected & 100.0 \\
+Bit-flip anywhere in message & reject & 1000/1000 rejected & 100.0 \\
+Header tamper: seq increased & reject (tag mismatch) & 1000/1000 rejected & 100.0 \\
+Header tamper: seq rewound & reject & 1000/1000 rejected & 100.0 \\
+Header tamper: device\_id changed & reject (tag mismatch) & 1000/1000 rejected & 100.0 \\
+Valid device 2 into device 1 session & reject & 1000/1000 rejected & 100.0 \\
+Wrong PSK: handshake & reject (bad HELLO MAC) & 1000/1000 rejected & 100.0 \\
+Wrong key: forged DATA in live session & reject (tag mismatch) & 1000/1000 rejected & 100.0 \\
+Unknown device\_id: handshake & reject (unknown device) & 1000/1000 rejected & 100.0 \\
+Captured HELLO replayed (new nonce) & reject (bad HELLO MAC) & 1000/1000 rejected & 100.0 \\
+Rogue server: forged WELCOME & client rejects & 1000/1000 rejected & 100.0 \\
+Rogue server: wrong PSK & client rejects & 1000/1000 rejected & 100.0 \\
+Rogue server: replayed WELCOME & client rejects & 1000/1000 rejected & 100.0 \\
+Truncated DATA message & reject & 1000/1000 rejected & 100.0 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,14 @@
+\begin{table}[t]
+\centering
+\caption{Slope-forecaster accuracy on the simulator (MAE of predicted ETA vs actual time to threshold over all forecast windows; half the trials use randomised fault slopes). Lead = time between the alert and the actual threshold crossing.}
+\label{tab:sys_forecast}
+\scriptsize
+\begin{tabular}{lrrrrrrr}
+\toprule
+Fault & Trials & MAE (s) & Med. $|e|$ (s) & Bias (s) & 1st-fcst MAE (s) & Fcst alert lead (s) & Thr. alert lead (s) \\
+\midrule
+Overheat (coolant to 110 $^\circ$C) & 60 & 16.5 & 4.7 & +16.4 & 144.6 & 9.8 & 3.1 \\
+Battery drain (to 11.4 V) & 60 & 15.2 & 3.5 & +15.2 & 183.6 & 15.9 & 3.4 \\
+\bottomrule
+\end{tabular}
+\end{table}

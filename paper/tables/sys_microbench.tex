@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{AES-128-GCM tunnel cost per DATA message (median over 600 real batches per traffic type). Handshake: median 26~$\mu$s, p95 55~$\mu$s (N=1000). Overhead is a constant 36~B per message.}
+\label{tab:sys_microbench}
+\footnotesize
+\begin{tabular}{lrrrrrr}
+\toprule
+Traffic & Payload (B) & On-wire (B) & Seal ($\mu$s) & Open ($\mu$s) & Open p95 ($\mu$s) & Seal+open msg/s \\
+\midrule
+normal & 1626 & 1662 & 37.8 & 57.2 & 93.5 & 13077 \\
+dos & 1088 & 1124 & 29.6 & 22.3 & 56.5 & 17989 \\
+fuzzy & 2357 & 2393 & 50.8 & 37.6 & 75.1 & 10222 \\
+rpm_spoof & 1558 & 1594 & 35.2 & 28.2 & 65.3 & -- \\
+gear_spoof & 1556 & 1592 & 35.8 & 28.8 & 76.4 & -- \\
+steering_spoof & 1557 & 1593 & 36.5 & 28.5 & 72.9 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

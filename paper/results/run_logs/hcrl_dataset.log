@@ -1,0 +1,6 @@
+  [cache] raw_DoS_dataset built in 6 s
+  [cache] raw_Fuzzy_dataset built in 7 s
+  [cache] raw_RPM_dataset built in 8 s
+  [cache] raw_gear_dataset built in 7 s
+  [cache] raw_normal_run_data built in 2 s
+{'DoS_dataset.csv': (2810.3112499713898, 3665771, 27, 587521, 300), 'Fuzzy_dataset.csv': (2947.6727588176727, 3838860, 2048, 491847, 300), 'RPM_dataset.csv': (2434.079043865204, 4621702, 26, 654897, 300), 'gear_dataset.csv': (2430.8765330314636, 4443142, 26, 597252, 300), 'normal_run_data.txt': (506.43657088279724, 988871, 27, 0, 0)}

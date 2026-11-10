@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{HCRL Car-Hacking captures used in this study. Intrusions are runs of injected (T) frames separated by more than 1.5~s. Injected rate and legitimate share are medians over intrusions (share = legitimate frames/s during the burst divided by the 0.9~s before it). Durations exclude timestamp jumps of more than 5~s between recording sessions.}
+\label{tab:hcrl_dataset}
+\begin{tabular}{lrrrrrlrr}
+\toprule
+Capture & Dur. (s) & Frames & IDs & Injected & Intrus. & Attack ID / payload & Inj. fr/s & Legit. kept (\%) \\
+\midrule
+DoS & 2810 & 3.67M & 27 & 587,521 & 300 & 0x000 / 00 00 00 00 00 00 00 00 & 388 & 18 \\
+Fuzzy & 2948 & 3.84M & 2048 & 491,847 & 300 & random (2048 IDs) & 240 & 20 \\
+RPM spoof & 2434 & 4.62M & 26 & 654,897 & 300 & 0x316 / 45 29 24 FF 29 24 00 FF & 647 & 75 \\
+Gear spoof & 2431 & 4.44M & 26 & 597,252 & 300 & 0x43F / 01 45 60 FF 6B 00 00 00 & 602 & 70 \\
+Normal & 506 & 0.99M & 27 & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}

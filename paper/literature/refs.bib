@@ -1,0 +1,399 @@
+% refs.bib - literature for the CAN-bus IDS / vehicle health paper.
+% All entries below were checked against a fetched page (publisher/DOI resolver metadata via Crossref API,
+% arXiv abstract page, USENIX, JMLR, RFC Editor, NIST CSRC, project/repo pages). Access date: 2026-11-10.
+% Entries that could NOT be confirmed are at the bottom, commented out, marked % UNVERIFIED.
+
+% ---------- Attacks on vehicles and CAN security background ----------
+
+@inproceedings{koscher2010,
+  author    = {Koscher, Karl and Czeskis, Alexei and Roesner, Franziska and Patel, Shwetak and Kohno, Tadayoshi and Checkoway, Stephen and McCoy, Damon and Kantor, Brian and Anderson, Danny and Shacham, Hovav and Savage, Stefan},
+  title     = {Experimental Security Analysis of a Modern Automobile},
+  booktitle = {2010 IEEE Symposium on Security and Privacy},
+  year      = {2010},
+  pages     = {447--462},
+  doi       = {10.1109/SP.2010.34},
+}
+
+@inproceedings{checkoway2011,
+  author    = {Checkoway, Stephen and McCoy, Damon and Kantor, Brian and Anderson, Danny and Shacham, Hovav and Savage, Stefan and Koscher, Karl and Czeskis, Alexei and Roesner, Franziska and Kohno, Tadayoshi},
+  title     = {Comprehensive Experimental Analyses of Automotive Attack Surfaces},
+  booktitle = {20th USENIX Security Symposium (USENIX Security 11)},
+  year      = {2011},
+  note      = {USENIX Association, San Francisco, CA},
+  url       = {https://usenix.org/conference/usenix-security-11/comprehensive-experimental-analyses-automotive-attack-surfaces},
+}
+
+% Author order as printed on the IOActive page (Valasek first).
+@techreport{miller2015,
+  author      = {Valasek, Chris and Miller, Charlie},
+  title       = {Remote Exploitation of an Unaltered Passenger Vehicle},
+  institution = {IOActive},
+  type        = {Whitepaper},
+  year        = {2015},
+  month       = aug,
+  note        = {Dated August 5, 2015; accompanies the Black Hat USA 2015 talk. Available at https://www.ioactive.com/remote-exploitation-of-an-unaltered-passenger-vehicle/},
+}
+
+% ---------- CAN-IDS: timing / frequency / entropy ----------
+
+@inproceedings{muter2011entropy,
+  author    = {M{\"u}ter, Michael and Asaj, Naim},
+  title     = {Entropy-based anomaly detection for in-vehicle networks},
+  booktitle = {2011 IEEE Intelligent Vehicles Symposium (IV)},
+  year      = {2011},
+  pages     = {1110--1115},
+  doi       = {10.1109/IVS.2011.5940552},
+}
+
+@inproceedings{cho2016cids,
+  author    = {Cho, Kyong-Tak and Shin, Kang G.},
+  title     = {Fingerprinting Electronic Control Units for Vehicle Intrusion Detection},
+  booktitle = {25th USENIX Security Symposium (USENIX Security 16)},
+  year      = {2016},
+  pages     = {911--927},
+  publisher = {USENIX Association},
+  address   = {Austin, TX},
+  url       = {https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/cho},
+}
+
+@inproceedings{song2016icoin,
+  author    = {Song, Hyun Min and Kim, Ha Rang and Kim, Huy Kang},
+  title     = {Intrusion detection system based on the analysis of time intervals of {CAN} messages for in-vehicle network},
+  booktitle = {2016 International Conference on Information Networking (ICOIN)},
+  year      = {2016},
+  pages     = {63--68},
+  doi       = {10.1109/ICOIN.2016.7427089},
+}
+
+% ---------- CAN-IDS: ML / DL ----------
+
+@article{song2020dcnn,
+  author    = {Song, Hyun Min and Woo, Jiyoung and Kim, Huy Kang},
+  title     = {In-vehicle network intrusion detection using deep convolutional neural network},
+  journal   = {Vehicular Communications},
+  volume    = {21},
+  pages     = {100198},
+  year      = {2020},
+  doi       = {10.1016/j.vehcom.2019.100198},
+}
+
+@inproceedings{seo2018gids,
+  author    = {Seo, Eunbi and Song, Hyun Min and Kim, Huy Kang},
+  title     = {{GIDS}: {GAN} based Intrusion Detection System for In-Vehicle Network},
+  booktitle = {2018 16th Annual Conference on Privacy, Security and Trust (PST)},
+  year      = {2018},
+  pages     = {1--6},
+  doi       = {10.1109/pst.2018.8514157},
+  note      = {Preprint: arXiv:1907.07377. Table values used in this project are from the arXiv version, which the HCRL dataset page says corrects Table 2 of the PST version.},
+}
+
+@inproceedings{yang2019tree,
+  author    = {Yang, Li and Moubayed, Abdallah and Hamieh, Ismail and Shami, Abdallah},
+  title     = {Tree-Based Intelligent Intrusion Detection System in Internet of Vehicles},
+  booktitle = {2019 IEEE Global Communications Conference (GLOBECOM)},
+  year      = {2019},
+  pages     = {1--6},
+  doi       = {10.1109/globecom38437.2019.9013892},
+  note      = {Preprint: arXiv:1910.08635},
+}
+
+@inproceedings{taylor2016lstm,
+  author    = {Taylor, Adrian and Leblanc, Sylvain and Japkowicz, Nathalie},
+  title     = {Anomaly Detection in Automobile Control Network Data with Long Short-Term Memory Networks},
+  booktitle = {2016 IEEE International Conference on Data Science and Advanced Analytics (DSAA)},
+  year      = {2016},
+  pages     = {130--139},
+  doi       = {10.1109/DSAA.2016.20},
+}
+
+@inproceedings{taylor2015,
+  author    = {Taylor, Adrian and Japkowicz, Nathalie and Leblanc, Sylvain},
+  title     = {Frequency-based anomaly detection for the automotive {CAN} bus},
+  booktitle = {2015 World Congress on Industrial Control Systems Security (WCICSS)},
+  year      = {2015},
+  pages     = {45--49},
+  doi       = {10.1109/WCICSS.2015.7420322},
+}
+
+@inproceedings{guerra2023road,
+  author    = {Guerra, Lorenzo and Xu, Linhan and Bellavista, Paolo and Chapuis, Thomas and Duc, Guillaume and Mozharovskyi, Pavlo and Nguyen, Van-Tam},
+  title     = {{AI}-Driven Intrusion Detection Systems ({IDS}) on the {ROAD} Dataset: A Comparative Analysis for Automotive Controller Area Network ({CAN})},
+  booktitle = {Proceedings of the 2024 Cyber Security in CarS Workshop},
+  year      = {2023},
+  pages     = {39--49},
+  doi       = {10.1145/3689936.3694696},
+  note      = {Preprint: arXiv:2408.17235. Its Table 4 reports per-class results on the HCRL Car-Hacking dataset.},
+}
+
+@article{frenken2025vgae,
+  author    = {Frenken, Robert and Ghayour Bhatti, Sidra and Zhang, Hanqin and Ahmed, Qadeer},
+  title     = {Multi-Stage Knowledge-Distilled {VGAE} and {GAT} for Robust Controller-Area-Network Intrusion Detection},
+  journal   = {arXiv preprint},
+  eprint    = {2508.04845},
+  archivePrefix = {arXiv},
+  year      = {2025},
+  note      = {Submitted 6 Aug 2025; preprint, no peer-review venue confirmed.},
+}
+
+@article{yang2022lccde,
+  author    = {Yang, Li and Shami, Abdallah and Stevens, Gary and De Rusett, Stephen},
+  title     = {{LCCDE}: A Decision-Based Ensemble Framework for Intrusion Detection in The Internet of Vehicles},
+  journal   = {arXiv preprint},
+  eprint    = {2208.03399},
+  archivePrefix = {arXiv},
+  year      = {2022},
+  note      = {Submitted 5 Aug 2022; listing states it is accepted at IEEE GLOBECOM 2022.},
+}
+
+% ---------- Surveys ----------
+
+@article{wu2020survey,
+  author    = {Wu, Wufei and Li, Renfa and Xie, Guoqi and An, Jiyao and Bai, Yang and Zhou, Jia and Li, Keqin},
+  title     = {A Survey of Intrusion Detection for In-Vehicle Networks},
+  journal   = {IEEE Transactions on Intelligent Transportation Systems},
+  volume    = {21},
+  number    = {3},
+  pages     = {919--933},
+  year      = {2020},
+  doi       = {10.1109/TITS.2019.2908074},
+}
+
+@article{young2019survey,
+  author    = {Young and Zambreno and Olufowobi and Bloom},
+  title     = {Survey of Automotive Controller Area Network Intrusion Detection Systems},
+  journal   = {IEEE Design \& Test},
+  volume    = {36},
+  pages     = {48--55},
+  year      = {2019},
+  doi       = {10.1109/MDAT.2019.2899062},
+}
+
+@inproceedings{dupont2019survey,
+  author    = {Dupont and den Hartog and Etalle and Lekidis},
+  title     = {A survey of network intrusion detection systems for controller area network},
+  booktitle = {2019 IEEE International Conference on Vehicular Electronics and Safety (ICVES)},
+  year      = {2019},
+  pages     = {1--6},
+  doi       = {10.1109/ICVES.2019.8906465},
+}
+
+@inproceedings{aljarrah2023icics,
+  author    = {Al-Jarrah and Ramadan and Alsaify and Alkhushayni},
+  title     = {Comparative Evaluation of Machine Learning-Based Controller Area Network Intrusion Detection Systems},
+  booktitle = {2023 14th International Conference on Information and Communication Systems (ICICS)},
+  year      = {2023},
+  pages     = {1--6},
+  doi       = {10.1109/ICICS60529.2023.10330534},
+  note      = {Year is 2023, not 2019 as the research plan stated. No numbers were extracted from it.},
+}
+
+% ---------- Other CAN datasets ----------
+
+@article{verma2024road,
+  author    = {Verma, Miki E. and Bridges, Robert A. and Iannacone, Michael D. and Hollifield, Samuel C. and Moriano, Pablo and Hespeler, Steven C. and Kay, Bill and Combs, Frank L.},
+  title     = {A comprehensive guide to {CAN} {IDS} data and introduction of the {ROAD} dataset},
+  journal   = {PLOS ONE},
+  volume    = {19},
+  number    = {1},
+  pages     = {e0296879},
+  year      = {2024},
+  doi       = {10.1371/journal.pone.0296879},
+  note      = {Preprint: arXiv:2012.14600 (titled "A Comprehensive Guide to CAN IDS Data \& Introduction of the ROAD Dataset").},
+}
+
+@article{hanselmann2020canet,
+  author    = {Hanselmann, Markus and Strauss, Thilo and Dormann, Katharina and Ulmer, Holger},
+  title     = {{CANet}: An Unsupervised Intrusion Detection System for High Dimensional {CAN} Bus Data},
+  journal   = {IEEE Access},
+  volume    = {8},
+  pages     = {58194--58205},
+  year      = {2020},
+  doi       = {10.1109/ACCESS.2020.2982544},
+  note      = {Preprint: arXiv:1906.02492. Evaluated on real and synthetic CAN data, not on HCRL.},
+}
+
+@misc{lampe2023canttt,
+  author        = {Lampe, Brooke and Meng, Weizhi},
+  title         = {can-train-and-test: A Curated {CAN} Dataset for Automotive Intrusion Detection},
+  year          = {2023},
+  eprint        = {2308.04972},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CR},
+  note          = {Submitted 9 Aug 2023. The Computers \& Security journal version was not confirmed here.},
+}
+
+@misc{syncan,
+  author = {{ETAS}},
+  title  = {{SynCAN}: Synthetic CAN Bus Data for Intrusion Detection},
+  howpublished = {GitHub repository, \url{https://github.com/etas/SynCAN}},
+  note   = {Non-commercial license terms (License terms.txt). Cite CANet (Hanselmann et al. 2020) as requested by the README.},
+}
+
+@misc{hcrl_cartack,
+  author       = {{HCRL, Korea University}},
+  title        = {Car-Hacking Dataset for Intrusion Detection},
+  howpublished = {\url{https://sites.google.com/hksecurity.net/hcrl/Datasets/car-hacking-dataset}},
+  note         = {Accessed 2026-11-10. Page asks users to cite Song et al. (2020) and Seo et al. (2018).},
+}
+
+@misc{road_zenodo,
+  author       = {Verma, Miki E. and Bridges, Robert A. and others},
+  title        = {Real {ORNL} Automotive Dynamometer ({ROAD}) {CAN} Intrusion Dataset},
+  year         = {2020},
+  howpublished = {Zenodo, \url{https://zenodo.org/records/10462796}},
+  note         = {v1, published 28 Dec 2020, CC BY 4.0. Cite the paper (verma2024road).},
+}
+
+@misc{kit_obd,
+  author       = {Weber, Marc},
+  title        = {Automotive {OBD-II} Dataset},
+  year         = {2023},
+  howpublished = {KITopen, \url{https://radar.kit.edu/radar/en/dataset/bCtGxdTklQlfQcAq}},
+  doi          = {10.35097/1130},
+  note         = {CC BY 4.0. Ten vehicle signals logged via OBD-II, normal driving.},
+}
+
+% ---------- Standards and cryptography ----------
+
+@techreport{nist2007gcm,
+  author      = {Dworkin, Morris},
+  title       = {Recommendation for Block Cipher Modes of Operation: Galois/Counter Mode ({GCM}) and {GMAC}},
+  institution = {National Institute of Standards and Technology},
+  type        = {NIST Special Publication},
+  number      = {800-38D},
+  year        = {2007},
+  month       = nov,
+  doi         = {10.6028/NIST.SP.800-38D},
+  note        = {The NIST page notes that NIST has decided to revise this publication.},
+}
+
+@misc{rfc2104,
+  author       = {Krawczyk, H. and Bellare, M. and Canetti, R.},
+  title        = {{HMAC}: Keyed-Hashing for Message Authentication},
+  howpublished = {RFC 2104},
+  year         = {1997},
+  month        = feb,
+  url          = {https://www.rfc-editor.org/rfc/rfc2104},
+}
+
+@misc{rfc5869,
+  author       = {Krawczyk, H. and Eronen, P.},
+  title        = {{HMAC}-based Extract-and-Expand Key Derivation Function ({HKDF})},
+  howpublished = {RFC 5869},
+  year         = {2010},
+  month        = may,
+  url          = {https://www.rfc-editor.org/rfc/rfc5869},
+}
+
+@misc{rfc6455,
+  author       = {Fette, I. and Melnikov, A.},
+  title        = {The {WebSocket} Protocol},
+  howpublished = {RFC 6455},
+  year         = {2011},
+  month        = dec,
+  url          = {https://www.rfc-editor.org/rfc/rfc6455},
+}
+
+@misc{espressif_twai,
+  author       = {{Espressif Systems}},
+  title        = {Two-Wire Automotive Interface ({TWAI}) - {ESP32}},
+  howpublished = {ESP-IDF Programming Guide, \url{https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/peripherals/twai.html}},
+  note         = {Accessed 2026-11-10.},
+}
+
+% ---------- Tooling and ML software ----------
+
+@misc{opendbc,
+  author       = {{comma.ai}},
+  title        = {opendbc: Open DBC files and CAN tools},
+  howpublished = {GitHub repository, \url{https://github.com/commaai/opendbc}},
+  note         = {MIT license. Accessed 2026-11-10.},
+}
+
+@misc{cantools,
+  author       = {{cantools contributors}},
+  title        = {cantools: CAN BUS tools in Python 3},
+  howpublished = {GitHub repository, \url{https://github.com/cantools/cantools}},
+  note         = {MIT license. Accessed 2026-11-10.},
+}
+
+@misc{westernoc2_ids,
+  author       = {{Western-OC2-Lab}},
+  title        = {Intrusion Detection System Using Machine Learning},
+  howpublished = {GitHub repository, \url{https://github.com/Western-OC2-Lab/Intrusion-Detection-System-Using-Machine-Learning}},
+  note         = {MIT license. Accessed 2026-11-10. Code for IDS-ML (tree models on the CAN-intrusion dataset).},
+}
+
+@inproceedings{liu2008iforest,
+  author    = {Liu, Fei Tony and Ting, Kai Ming and Zhou, Zhi-Hua},
+  title     = {Isolation Forest},
+  booktitle = {2008 Eighth IEEE International Conference on Data Mining (ICDM)},
+  year      = {2008},
+  pages     = {413--422},
+  doi       = {10.1109/ICDM.2008.17},
+}
+
+@article{breiman2001rf,
+  author    = {Breiman},
+  title     = {Random Forests},
+  journal   = {Machine Learning},
+  volume    = {45},
+  number    = {1},
+  pages     = {5--32},
+  year      = {2001},
+  doi       = {10.1023/A:1010933404324},
+}
+
+@article{pedregosa2011sklearn,
+  author  = {Pedregosa, Fabian and Varoquaux, Ga{\"e}l and Gramfort, Alexandre and Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and Blondel, Mathieu and Prettenhofer, Peter and Weiss, Ron and Dubourg, Vincent and Vanderplas, Jake and Passos, Alexandre and Cournapeau, David and Brucher, Matthieu and Perrot, Matthieu and Duchesnay, {\'E}douard},
+  title   = {Scikit-learn: Machine Learning in Python},
+  journal = {Journal of Machine Learning Research},
+  volume  = {12},
+  number  = {85},
+  pages   = {2825--2830},
+  year    = {2011},
+  url     = {https://www.jmlr.org/papers/v12/pedregosa11a.html},
+}
+
+% ---------- Vehicle health / predictive maintenance and telematics privacy ----------
+
+@article{theissler2021pdm,
+  author    = {Theissler and P{\'e}rez-Vel{\'a}zquez and Kettelgerdes and Elger},
+  title     = {Predictive maintenance enabled by machine learning: Use cases and challenges in the automotive industry},
+  journal   = {Reliability Engineering \& System Safety},
+  volume    = {215},
+  pages     = {107864},
+  year      = {2021},
+  doi       = {10.1016/j.ress.2021.107864},
+}
+
+@article{walter2020privacy,
+  author    = {Walter and Abendroth},
+  title     = {On the role of informational privacy in connected vehicles: A privacy-aware acceptance modelling approach for connected vehicular services},
+  journal   = {Telematics and Informatics},
+  year      = {2020},
+  doi       = {10.1016/j.tele.2020.101361},
+}
+
+% =====================================================================
+% UNVERIFIED (kept out of the bibliography; uncomment only after confirming)
+% =====================================================================
+
+% UNVERIFIED: ISO 11898-1:2024 (current CAN data link layer standard). Only search-listing evidence
+% (iso.org/standard/86384.html and genorma) was seen; the iso.org page itself returned HTTP 403.
+% @techreport{iso11898_2024,
+%   title = {Road vehicles -- Controller area network ({CAN}) -- Part 1: Data link layer and physical coding sublayer},
+%   institution = {ISO},
+%   number = {ISO 11898-1:2024},
+%   year = {2024},
+% }   % UNVERIFIED
+
+% UNVERIFIED: AUTOSAR SecOC specification (R24-11, Document ID 654). Only the search listing
+% (autosar.org PDF titles) was seen; the PDFs returned unreadable binary and the autosar.org
+% standards page did not list SecOC. Do not cite until the cover page or document metadata is read.
+% @techreport{autosar_secoc,
+%   title = {Specification of Secure Onboard Communication},
+%   institution = {AUTOSAR},
+%   number = {R24-11 (Document ID 654)},
+%   year = {2024},
+% }   % UNVERIFIED

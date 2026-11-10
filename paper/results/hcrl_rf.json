@@ -1,0 +1,418 @@
+{
+  "split": "last 25% of every capture held out, time-contiguous; training windows within 0.6 s of a label change excluded",
+  "heldout_windows": 27820,
+  "train_windows_hcrl": 69051,
+  "train_windows_synth": 16078,
+  "feature_names": [
+    "total_ratio",
+    "max_known_ratio",
+    "rpm_ratio",
+    "gear_ratio",
+    "steering_ratio",
+    "unknown_fps",
+    "n_unknown_ids",
+    "max_unknown_id_fps",
+    "bus_load_pct",
+    "steering_rate"
+  ],
+  "models": {
+    "hcrl_only": {
+      "all": {
+        "normal": {
+          "precision": 0.9996191604603927,
+          "recall": 0.987129664451966,
+          "f1": 0.9933351554779976,
+          "support": 23931
+        },
+        "dos": {
+          "precision": 0.9287003610108303,
+          "recall": 0.997093023255814,
+          "f1": 0.9616822429906542,
+          "support": 1032
+        },
+        "fuzzy": {
+          "precision": 0.9401555954518253,
+          "recall": 0.9974603174603175,
+          "f1": 0.9679605668515096,
+          "support": 1575
+        },
+        "spoofing": {
+          "precision": 0.9070262597586941,
+          "recall": 0.9968798751950078,
+          "f1": 0.9498327759197325,
+          "support": 1282
+        },
+        "accuracy": 0.9885334291876348,
+        "macro_f1": 0.9682026853099734
+      },
+      "settled": {
+        "normal": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 23330
+        },
+        "dos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 879
+        },
+        "fuzzy": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1371
+        },
+        "spoofing": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1040
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "confusion_all": [
+        [
+          23623,
+          79,
+          98,
+          131
+        ],
+        [
+          1,
+          1029,
+          2,
+          0
+        ],
+        [
+          4,
+          0,
+          1571,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          1278
+        ]
+      ],
+      "importance": {
+        "total_ratio": 0.019410576924247712,
+        "max_known_ratio": 0.22765122453353098,
+        "rpm_ratio": 0.06757015177745437,
+        "gear_ratio": 0.06502435884533453,
+        "steering_ratio": 0.01005475585469993,
+        "unknown_fps": 0.12855682221335255,
+        "n_unknown_ids": 0.2132778238032224,
+        "max_unknown_id_fps": 0.2519343395611001,
+        "bus_load_pct": 0.015574798870176994,
+        "steering_rate": 0.0009451476168804045
+      }
+    },
+    "deployed": {
+      "all": {
+        "normal": {
+          "precision": 0.9996191443442936,
+          "recall": 0.9870878776482387,
+          "f1": 0.9933139901602119,
+          "support": 23931
+        },
+        "dos": {
+          "precision": 0.9287003610108303,
+          "recall": 0.997093023255814,
+          "f1": 0.9616822429906542,
+          "support": 1032
+        },
+        "fuzzy": {
+          "precision": 0.9395933014354066,
+          "recall": 0.9974603174603175,
+          "f1": 0.9676624576532183,
+          "support": 1575
+        },
+        "spoofing": {
+          "precision": 0.9070262597586941,
+          "recall": 0.9968798751950078,
+          "f1": 0.9498327759197325,
+          "support": 1282
+        },
+        "accuracy": 0.9884974838245866,
+        "macro_f1": 0.9681228666809543
+      },
+      "settled": {
+        "normal": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 23330
+        },
+        "dos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 879
+        },
+        "fuzzy": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1371
+        },
+        "spoofing": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1040
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "confusion_all": [
+        [
+          23622,
+          79,
+          99,
+          131
+        ],
+        [
+          1,
+          1029,
+          2,
+          0
+        ],
+        [
+          4,
+          0,
+          1571,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          1278
+        ]
+      ],
+      "importance": {
+        "total_ratio": 0.037651744051288856,
+        "max_known_ratio": 0.21371643353897513,
+        "rpm_ratio": 0.06277498275925135,
+        "gear_ratio": 0.055103793861457896,
+        "steering_ratio": 0.01515451588547521,
+        "unknown_fps": 0.13254412716401137,
+        "n_unknown_ids": 0.21950661750944864,
+        "max_unknown_id_fps": 0.24919831441725146,
+        "bus_load_pct": 0.012788682659135431,
+        "steering_rate": 0.0015607881537046827
+      }
+    },
+    "hcrl_plus_synth_retrained": {
+      "all": {
+        "normal": {
+          "precision": 0.9996191443442936,
+          "recall": 0.9870878776482387,
+          "f1": 0.9933139901602119,
+          "support": 23931
+        },
+        "dos": {
+          "precision": 0.9287003610108303,
+          "recall": 0.997093023255814,
+          "f1": 0.9616822429906542,
+          "support": 1032
+        },
+        "fuzzy": {
+          "precision": 0.9395933014354066,
+          "recall": 0.9974603174603175,
+          "f1": 0.9676624576532183,
+          "support": 1575
+        },
+        "spoofing": {
+          "precision": 0.9070262597586941,
+          "recall": 0.9968798751950078,
+          "f1": 0.9498327759197325,
+          "support": 1282
+        },
+        "accuracy": 0.9884974838245866,
+        "macro_f1": 0.9681228666809543
+      },
+      "settled": {
+        "normal": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 23330
+        },
+        "dos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 879
+        },
+        "fuzzy": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1371
+        },
+        "spoofing": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 1040
+        },
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "confusion_all": [
+        [
+          23622,
+          79,
+          99,
+          131
+        ],
+        [
+          1,
+          1029,
+          2,
+          0
+        ],
+        [
+          4,
+          0,
+          1571,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          1278
+        ]
+      ],
+      "importance": {
+        "total_ratio": 0.037651744051288856,
+        "max_known_ratio": 0.21371643353897513,
+        "rpm_ratio": 0.06277498275925135,
+        "gear_ratio": 0.055103793861457896,
+        "steering_ratio": 0.01515451588547521,
+        "unknown_fps": 0.13254412716401137,
+        "n_unknown_ids": 0.21950661750944864,
+        "max_unknown_id_fps": 0.24919831441725146,
+        "bus_load_pct": 0.012788682659135431,
+        "steering_rate": 0.0015607881537046827
+      }
+    }
+  },
+  "deployed_vs_retrained_agreement": 1.0,
+  "heldout_intrusions_per_file": {
+    "DoS_dataset.csv": 23,
+    "Fuzzy_dataset.csv": 30,
+    "gear_dataset.csv": 18,
+    "normal_run_data.txt": 0,
+    "RPM_dataset.csv": 18
+  },
+  "heldout_per_class": {
+    "normal": {
+      "windows": 23931
+    },
+    "dos": {
+      "windows": 1032
+    },
+    "fuzzy": {
+      "windows": 1575
+    },
+    "spoofing": {
+      "windows": 1282
+    }
+  },
+  "ablation_no_steering_features": {
+    "all": {
+      "normal": {
+        "precision": 0.9994925145902055,
+        "recall": 0.9875893192929672,
+        "f1": 0.9935052651491266,
+        "support": 23931
+      },
+      "dos": {
+        "precision": 0.9287646528403968,
+        "recall": 0.998062015503876,
+        "f1": 0.9621672115833723,
+        "support": 1032
+      },
+      "fuzzy": {
+        "precision": 0.9435435435435435,
+        "recall": 0.9974603174603175,
+        "f1": 0.9697530864197531,
+        "support": 1575
+      },
+      "spoofing": {
+        "precision": 0.9114285714285715,
+        "recall": 0.9953198127925117,
+        "f1": 0.9515287099179717,
+        "support": 1282
+      },
+      "accuracy": 0.9888928828181165,
+      "macro_f1": 0.9692385682675559
+    },
+    "settled": {
+      "normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 23330
+      },
+      "dos": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 879
+      },
+      "fuzzy": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1371
+      },
+      "spoofing": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1040
+      },
+      "accuracy": 1.0,
+      "macro_f1": 1.0
+    },
+    "confusion_all": [
+      [
+        23634,
+        79,
+        94,
+        124
+      ],
+      [
+        2,
+        1030,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        1571,
+        0
+      ],
+      [
+        6,
+        0,
+        0,
+        1276
+      ]
+    ],
+    "dropped": [
+      "steering_ratio",
+      "steering_rate"
+    ]
+  }
+}

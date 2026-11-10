@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{RandomForest on the time-contiguous HCRL hold-out (last 25\% of each capture). HCRL-only: trained on HCRL windows; Deployed: HCRL plus simulator windows (the model shipped with the system).}
+\label{tab:hcrl_rf_perclass}
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+& \multicolumn{6}{c}{HCRL-only RF} & \multicolumn{6}{c}{Deployed RF (HCRL+sim)} \\
+& \multicolumn{3}{c}{All} & \multicolumn{3}{c}{Settled} & \multicolumn{3}{c}{All} & \multicolumn{3}{c}{Settled} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}\cmidrule(lr){8-10}\cmidrule(lr){11-13}
+Class & P & R & F1 & P & R & F1 & P & R & F1 & P & R & F1 \\
+\midrule
+Normal & 1.000 & 0.987 & 0.993 & 1.000 & 1.000 & 1.000 & 1.000 & 0.987 & 0.993 & 1.000 & 1.000 & 1.000 \\
+DoS & 0.929 & 0.997 & 0.962 & 1.000 & 1.000 & 1.000 & 0.929 & 0.997 & 0.962 & 1.000 & 1.000 & 1.000 \\
+Fuzzy & 0.940 & 0.997 & 0.968 & 1.000 & 1.000 & 1.000 & 0.940 & 0.997 & 0.968 & 1.000 & 1.000 & 1.000 \\
+Spoofing & 0.907 & 0.997 & 0.950 & 1.000 & 1.000 & 1.000 & 0.907 & 0.997 & 0.950 & 1.000 & 1.000 & 1.000 \\
+\midrule
+Macro avg &  &  & 0.968 &  &  & 1.000 &  &  & 0.968 &  &  & 1.000 \\
+\bottomrule
+\end{tabular}
+\end{table*}

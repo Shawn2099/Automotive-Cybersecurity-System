@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\caption{Server scalability: N devices at 10~Hz each, 30~s per point (15~s for $N>10$), one server process (single-threaded asyncio) on the laptop. CPU is process CPU time over wall time (100\% = one core).}
+\label{tab:sys_scalability}
+\scriptsize
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Traffic & N & CPU (\% core) & CPU ms/pkt & Lat. med (ms) & Lat. p95 (ms) & Late $>$100ms (\%) & Unproc. at end & RSS (MB) \\
+\midrule
+normal & 1 & 12.8 & 12.95 & 12.9 & 35.3 & 1.7 & 0 & 153 \\
+normal & 2 & 25.4 & 12.80 & 12.9 & 36.6 & 0.0 & 0 & 153 \\
+normal & 5 & 61.1 & 12.32 & 24.4 & 59.9 & 1.1 & 0 & 154 \\
+normal & 10 & 89.5 & 12.15 & 8306.9 & 13574.8 & 100.0 & 0 & 158 \\
+normal & 20 & 87.1 & 12.20 & 17997.7 & 29806.9 & 100.0 & 0 & 162 \\
+normal & 40 & 89.0 & 9.07 & 28998.1 & 49548.7 & 100.0 & 2894 & 167 \\
+dos & 1 & 13.1 & 13.10 & 12.8 & 40.8 & 0.0 & 0 & 159 \\
+dos & 2 & 25.4 & 12.77 & 12.8 & 42.4 & 0.0 & 0 & 160 \\
+dos & 5 & 61.2 & 12.38 & 24.8 & 66.6 & 0.1 & 0 & 160 \\
+dos & 10 & 91.0 & 12.17 & 7615.1 & 12640.9 & 100.0 & 0 & 161 \\
+dos & 20 & 88.5 & 12.18 & 17609.5 & 29643.4 & 100.0 & 0 & 164 \\
+dos & 40 & 88.3 & 12.26 & 30115.0 & 46830.3 & 100.0 & 2309 & 166 \\
+\bottomrule
+\end{tabular}
+\end{table}

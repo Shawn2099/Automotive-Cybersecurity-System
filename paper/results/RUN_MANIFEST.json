@@ -1,0 +1,254 @@
+{
+  "finished": "2026-11-11T01:23:04",
+  "total_seconds": 2869.1,
+  "code": {
+    "commit": "bd3be00",
+    "dirty_files": "1"
+  },
+  "python": "3.11.9",
+  "args": {
+    "quick": false,
+    "only": null,
+    "cold": true
+  },
+  "steps": [
+    {
+      "step": "diag_architecture",
+      "group": "diag",
+      "status": "OK",
+      "seconds": 2.5,
+      "log": "results\\run_logs\\diag_architecture.log"
+    },
+    {
+      "step": "diag_handshake",
+      "group": "diag",
+      "status": "OK",
+      "seconds": 2.0,
+      "log": "results\\run_logs\\diag_handshake.log"
+    },
+    {
+      "step": "diag_envelope",
+      "group": "diag",
+      "status": "OK",
+      "seconds": 1.9,
+      "log": "results\\run_logs\\diag_envelope.log"
+    },
+    {
+      "step": "diag_pipeline",
+      "group": "diag",
+      "status": "OK",
+      "seconds": 2.3,
+      "log": "results\\run_logs\\diag_pipeline.log"
+    },
+    {
+      "step": "diag_threat_model",
+      "group": "diag",
+      "status": "OK",
+      "seconds": 2.3,
+      "log": "results\\run_logs\\diag_threat_model.log"
+    },
+    {
+      "step": "diag_training",
+      "group": "diag",
+      "status": "OK",
+      "seconds": 1.9,
+      "log": "results\\run_logs\\diag_training.log"
+    },
+    {
+      "step": "hcrl_dataset",
+      "group": "hcrl",
+      "status": "OK",
+      "seconds": 70.6,
+      "log": "results\\run_logs\\hcrl_dataset.log"
+    },
+    {
+      "step": "hcrl_rules",
+      "group": "hcrl",
+      "status": "OK",
+      "seconds": 47.8,
+      "log": "results\\run_logs\\hcrl_rules.log"
+    },
+    {
+      "step": "hcrl_rf",
+      "group": "hcrl",
+      "status": "OK",
+      "seconds": 33.4,
+      "log": "results\\run_logs\\hcrl_rf.log"
+    },
+    {
+      "step": "hcrl_transfer",
+      "group": "hcrl",
+      "status": "OK",
+      "seconds": 95.5,
+      "log": "results\\run_logs\\hcrl_transfer.log"
+    },
+    {
+      "step": "hcrl_sensitivity",
+      "group": "hcrl",
+      "status": "OK",
+      "seconds": 222.7,
+      "log": "results\\run_logs\\hcrl_sensitivity.log"
+    },
+    {
+      "step": "hcrl_window",
+      "group": "hcrl",
+      "status": "OK",
+      "seconds": 80.1,
+      "log": "results\\run_logs\\hcrl_window.log"
+    },
+    {
+      "step": "hcrl_summary",
+      "group": "hcrl",
+      "status": "OK",
+      "seconds": 1.0,
+      "log": "results\\run_logs\\hcrl_summary.log"
+    },
+    {
+      "step": "sys_01_microbench",
+      "group": "sys",
+      "status": "OK",
+      "seconds": 5.1,
+      "log": "results\\run_logs\\sys_01_microbench.log"
+    },
+    {
+      "step": "sys_02_security",
+      "group": "sys",
+      "status": "OK",
+      "seconds": 3.2,
+      "log": "results\\run_logs\\sys_02_security.log"
+    },
+    {
+      "step": "sys_03_bandwidth",
+      "group": "sys",
+      "status": "OK",
+      "seconds": 13.3,
+      "log": "results\\run_logs\\sys_03_bandwidth.log"
+    },
+    {
+      "step": "sys_04_latency",
+      "group": "sys",
+      "status": "OK",
+      "seconds": 1270.8,
+      "log": "results\\run_logs\\sys_04_latency.log"
+    },
+    {
+      "step": "sys_05_scalability",
+      "group": "sys",
+      "status": "OK",
+      "seconds": 573.8,
+      "log": "results\\run_logs\\sys_05_scalability.log"
+    },
+    {
+      "step": "sys_06_health",
+      "group": "sys",
+      "status": "OK",
+      "seconds": 312.9,
+      "log": "results\\run_logs\\sys_06_health.log"
+    },
+    {
+      "step": "sys_07_cyber_timeline",
+      "group": "sys",
+      "status": "OK",
+      "seconds": 125.7,
+      "log": "results\\run_logs\\sys_07_cyber_timeline.log"
+    },
+    {
+      "step": "sys_summary",
+      "group": "sys",
+      "status": "OK",
+      "seconds": 0.1,
+      "log": "results\\run_logs\\sys_summary.log"
+    }
+  ],
+  "outputs_changed": [
+    "figures\\diag_architecture.pdf",
+    "figures\\diag_envelope.pdf",
+    "figures\\diag_handshake.pdf",
+    "figures\\diag_pipeline.pdf",
+    "figures\\diag_threat_model.pdf",
+    "figures\\diag_training.pdf",
+    "figures\\hcrl_burst_timeseries.pdf",
+    "figures\\hcrl_id_rates.pdf",
+    "figures\\hcrl_id_rates.png",
+    "figures\\hcrl_rf_confusion.pdf",
+    "figures\\hcrl_rf_importance.pdf",
+    "figures\\hcrl_rules_confusion.pdf",
+    "figures\\hcrl_rules_latency_ecdf.pdf",
+    "figures\\hcrl_sensitivity.pdf",
+    "figures\\hcrl_sensitivity_vs_threshold.pdf",
+    "figures\\hcrl_transfer.pdf",
+    "figures\\hcrl_window.pdf",
+    "figures\\sys_alert_latency.pdf",
+    "figures\\sys_alert_latency.png",
+    "figures\\sys_anomaly_hist.pdf",
+    "figures\\sys_bandwidth.pdf",
+    "figures\\sys_bandwidth.png",
+    "figures\\sys_crypto_latency.pdf",
+    "figures\\sys_crypto_latency.png",
+    "figures\\sys_cyber_timeline.pdf",
+    "figures\\sys_forecast_accuracy.pdf",
+    "figures\\sys_health_timeseries.pdf",
+    "figures\\sys_scalability.pdf",
+    "figures\\sys_scalability.png",
+    "results\\sys_SUMMARY.md",
+    "results\\sys_bandwidth.json",
+    "results\\sys_cyber_timeline.json",
+    "results\\sys_health.json",
+    "results\\sys_latency.json",
+    "results\\sys_microbench.json",
+    "results\\sys_scalability.json",
+    "results\\sys_security.json",
+    "tables\\sys_ingest_latency.tex",
+    "tables\\sys_latency.tex",
+    "tables\\sys_microbench.tex",
+    "tables\\sys_scalability.tex"
+  ],
+  "outputs_identical": [
+    "diagrams\\diag_architecture.tex",
+    "diagrams\\diag_envelope.tex",
+    "diagrams\\diag_handshake.tex",
+    "diagrams\\diag_pipeline.tex",
+    "diagrams\\diag_threat_model.tex",
+    "diagrams\\diag_training.tex",
+    "figures\\diag_architecture.png",
+    "figures\\diag_envelope.png",
+    "figures\\diag_handshake.png",
+    "figures\\diag_pipeline.png",
+    "figures\\diag_threat_model.png",
+    "figures\\diag_training.png",
+    "figures\\hcrl_burst_timeseries.png",
+    "figures\\hcrl_rf_confusion.png",
+    "figures\\hcrl_rf_importance.png",
+    "figures\\hcrl_rules_confusion.png",
+    "figures\\hcrl_rules_latency_ecdf.png",
+    "figures\\hcrl_sensitivity.png",
+    "figures\\hcrl_sensitivity_vs_threshold.png",
+    "figures\\hcrl_transfer.png",
+    "figures\\hcrl_window.png",
+    "figures\\sys_anomaly_hist.png",
+    "figures\\sys_cyber_timeline.png",
+    "figures\\sys_forecast_accuracy.png",
+    "figures\\sys_health_timeseries.png",
+    "results\\diag_SUMMARY.md",
+    "results\\hcrl_SUMMARY.md",
+    "results\\hcrl_dataset.json",
+    "results\\hcrl_rf.json",
+    "results\\hcrl_rules.json",
+    "results\\hcrl_sensitivity.json",
+    "results\\hcrl_transfer.json",
+    "results\\hcrl_window.json",
+    "tables\\hcrl_dataset_files.tex",
+    "tables\\hcrl_rf_perclass.tex",
+    "tables\\hcrl_rules_latency.tex",
+    "tables\\hcrl_rules_perclass.tex",
+    "tables\\hcrl_sensitivity.tex",
+    "tables\\hcrl_transfer_all.tex",
+    "tables\\hcrl_transfer_settled.tex",
+    "tables\\hcrl_window.tex",
+    "tables\\sys_anomaly.tex",
+    "tables\\sys_bandwidth.tex",
+    "tables\\sys_cyber_timeline.tex",
+    "tables\\sys_forecast.tex",
+    "tables\\sys_security.tex"
+  ]
+}
