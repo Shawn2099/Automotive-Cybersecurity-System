@@ -1,0 +1,1049 @@
+{
+  "generated": "2026-11-10",
+  "rules": {
+    "per_class_all_windows": {
+      "normal": {
+        "precision": 0.9901,
+        "recall": 0.9427,
+        "f1": 0.9658,
+        "support": 60030
+      },
+      "dos": {
+        "precision": 0.9565,
+        "recall": 0.9834,
+        "f1": 0.9697,
+        "support": 14056
+      },
+      "fuzzy": {
+        "precision": 0.9523,
+        "recall": 0.9941,
+        "f1": 0.9728,
+        "support": 15822
+      },
+      "spoofing": {
+        "precision": 0.9127,
+        "recall": 0.989,
+        "f1": 0.9493,
+        "support": 21366
+      },
+      "accuracy": 0.964
+    },
+    "per_class_settled_windows": {
+      "normal": {
+        "precision": 0.9972,
+        "recall": 1.0,
+        "f1": 0.9986,
+        "support": 51163
+      },
+      "dos": {
+        "precision": 1.0,
+        "recall": 0.9915,
+        "f1": 0.9958,
+        "support": 11827
+      },
+      "fuzzy": {
+        "precision": 1.0,
+        "recall": 0.9999,
+        "f1": 1.0,
+        "support": 13615
+      },
+      "spoofing": {
+        "precision": 1.0,
+        "recall": 0.9975,
+        "f1": 0.9988,
+        "support": 16945
+      },
+      "accuracy": 0.9985
+    },
+    "per_file": {
+      "DoS_dataset.csv": {
+        "file": "DoS_dataset.csv",
+        "windows": 28101,
+        "duration_s": 2810.1,
+        "window_confusion_all": {
+          "dos->dos": 13822,
+          "dos->normal": 234,
+          "normal->dos": 629,
+          "normal->normal": 13416
+        },
+        "window_confusion_settled": {
+          "dos->dos": 11727,
+          "dos->normal": 100,
+          "normal->normal": 11849
+        },
+        "intrusions": 300,
+        "intrusions_detected_by_alert": 300,
+        "detection_rate": 1.0,
+        "latency_alert_s": {
+          "median": 0.084,
+          "p95": 0.256,
+          "max": 0.47,
+          "min": 0.023
+        },
+        "latency_rule_state_s": {
+          "median": 0.084,
+          "p95": 0.256,
+          "max": 0.47
+        },
+        "alerts_total": {
+          "cyber:dos": 300
+        },
+        "cyber_alerts_outside_intrusions": 0,
+        "cyber_alerts_wrong_class_during_intrusion": 0,
+        "normal_seconds": 1404.5,
+        "mechanical_alerts": {}
+      },
+      "Fuzzy_dataset.csv": {
+        "file": "Fuzzy_dataset.csv",
+        "windows": 29464,
+        "duration_s": 2946.4,
+        "window_confusion_all": {
+          "fuzzy->fuzzy": 15728,
+          "fuzzy->normal": 94,
+          "normal->fuzzy": 787,
+          "normal->normal": 12855
+        },
+        "window_confusion_settled": {
+          "fuzzy->fuzzy": 13614,
+          "fuzzy->normal": 1,
+          "normal->normal": 11417
+        },
+        "intrusions": 300,
+        "intrusions_detected_by_alert": 300,
+        "detection_rate": 1.0,
+        "latency_alert_s": {
+          "median": 0.079,
+          "p95": 0.162,
+          "max": 0.321,
+          "min": 0.021
+        },
+        "latency_rule_state_s": {
+          "median": 0.079,
+          "p95": 0.162,
+          "max": 0.321
+        },
+        "alerts_total": {
+          "cyber:fuzzy": 300
+        },
+        "cyber_alerts_outside_intrusions": 0,
+        "cyber_alerts_wrong_class_during_intrusion": 0,
+        "normal_seconds": 1364.2,
+        "mechanical_alerts": {}
+      },
+      "gear_dataset.csv": {
+        "file": "gear_dataset.csv",
+        "windows": 24308,
+        "duration_s": 2430.8,
+        "window_confusion_all": {
+          "normal->normal": 12668,
+          "normal->spoofing": 977,
+          "spoofing->normal": 149,
+          "spoofing->spoofing": 10514
+        },
+        "window_confusion_settled": {
+          "normal->normal": 11422,
+          "spoofing->normal": 42,
+          "spoofing->spoofing": 8413
+        },
+        "intrusions": 300,
+        "intrusions_detected_by_alert": 300,
+        "detection_rate": 1.0,
+        "latency_alert_s": {
+          "median": 0.081,
+          "p95": 0.129,
+          "max": 0.452,
+          "min": 0.029
+        },
+        "latency_rule_state_s": {
+          "median": 0.081,
+          "p95": 0.129,
+          "max": 0.452
+        },
+        "alerts_total": {
+          "cyber:spoofing_gear": 300
+        },
+        "cyber_alerts_outside_intrusions": 0,
+        "cyber_alerts_wrong_class_during_intrusion": 0,
+        "normal_seconds": 1364.5,
+        "mechanical_alerts": {}
+      },
+      "normal_run_data.txt": {
+        "file": "normal_run_data.txt",
+        "windows": 5065,
+        "duration_s": 506.5,
+        "window_confusion_all": {
+          "normal->normal": 5065
+        },
+        "window_confusion_settled": {
+          "normal->normal": 5065
+        },
+        "intrusions": 0,
+        "intrusions_detected_by_alert": 0,
+        "detection_rate": null,
+        "latency_alert_s": {
+          "median": null,
+          "p95": null,
+          "max": null,
+          "min": null
+        },
+        "latency_rule_state_s": {
+          "median": null,
+          "p95": null,
+          "max": null
+        },
+        "alerts_total": {},
+        "cyber_alerts_outside_intrusions": 0,
+        "cyber_alerts_wrong_class_during_intrusion": 0,
+        "normal_seconds": 506.5,
+        "mechanical_alerts": {}
+      },
+      "RPM_dataset.csv": {
+        "file": "RPM_dataset.csv",
+        "windows": 24336,
+        "duration_s": 2433.6,
+        "window_confusion_all": {
+          "normal->normal": 12588,
+          "normal->spoofing": 1045,
+          "spoofing->normal": 87,
+          "spoofing->spoofing": 10616
+        },
+        "window_confusion_settled": {
+          "normal->normal": 11410,
+          "spoofing->spoofing": 8490
+        },
+        "intrusions": 300,
+        "intrusions_detected_by_alert": 300,
+        "detection_rate": 1.0,
+        "latency_alert_s": {
+          "median": 0.079,
+          "p95": 0.125,
+          "max": 0.195,
+          "min": 0.027
+        },
+        "latency_rule_state_s": {
+          "median": 0.079,
+          "p95": 0.125,
+          "max": 0.195
+        },
+        "alerts_total": {
+          "cyber:spoofing_rpm": 300
+        },
+        "cyber_alerts_outside_intrusions": 0,
+        "cyber_alerts_wrong_class_during_intrusion": 0,
+        "normal_seconds": 1363.3,
+        "mechanical_alerts": {}
+      }
+    },
+    "normal_run": {
+      "duration_s": 506.5,
+      "cyber_alerts": 0,
+      "mechanical_alerts": 0,
+      "cyber_alerts_per_hour": 0.0,
+      "mechanical_alerts_per_hour": 0.0,
+      "alerts": {}
+    },
+    "attack_capture_normal_stretches": {
+      "normal_seconds": 5496.5,
+      "cyber_alerts_outside_intrusions": 0,
+      "per_hour": 0.0
+    }
+  },
+  "rf": {
+    "split": "last 25 % of every HCRL file held out (time-contiguous); synthetic: whole runs held out",
+    "hcrl_heldout_windows": 27820,
+    "fresh_sim_windows": 6300,
+    "models": {
+      "rf_hcrl": {
+        "on_hcrl_heldout": {
+          "all": {
+            "normal": {
+              "precision": 0.9996,
+              "recall": 0.9871,
+              "f1": 0.9933,
+              "support": 23931
+            },
+            "dos": {
+              "precision": 0.9287,
+              "recall": 0.9971,
+              "f1": 0.9617,
+              "support": 1032
+            },
+            "fuzzy": {
+              "precision": 0.9402,
+              "recall": 0.9975,
+              "f1": 0.968,
+              "support": 1575
+            },
+            "spoofing": {
+              "precision": 0.907,
+              "recall": 0.9969,
+              "f1": 0.9498,
+              "support": 1282
+            },
+            "accuracy": 0.9885
+          },
+          "settled": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 23330
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 879
+            },
+            "fuzzy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1371
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1040
+            },
+            "accuracy": 1.0
+          }
+        },
+        "on_synthetic_heldout": {
+          "all": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 0.982,
+              "f1": 0.9909,
+              "support": 5103
+            },
+            "dos": {
+              "precision": 0.9015,
+              "recall": 1.0,
+              "f1": 0.9482,
+              "support": 183
+            },
+            "fuzzy": {
+              "precision": 0.9135,
+              "recall": 1.0,
+              "f1": 0.9548,
+              "support": 169
+            },
+            "spoofing": {
+              "precision": 0.9068,
+              "recall": 1.0,
+              "f1": 0.9511,
+              "support": 545
+            },
+            "accuracy": 0.9847
+          },
+          "settled": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4983
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 157
+            },
+            "fuzzy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 143
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 471
+            },
+            "accuracy": 1.0
+          }
+        },
+        "on_fresh_sim": {
+          "all": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 0.9628,
+              "f1": 0.981,
+              "support": 4436
+            },
+            "dos": {
+              "precision": 0.9185,
+              "recall": 1.0,
+              "f1": 0.9575,
+              "support": 372
+            },
+            "fuzzy": {
+              "precision": 0.9142,
+              "recall": 1.0,
+              "f1": 0.9552,
+              "support": 341
+            },
+            "spoofing": {
+              "precision": 0.9201,
+              "recall": 1.0,
+              "f1": 0.9584,
+              "support": 1151
+            },
+            "accuracy": 0.9738
+          },
+          "settled": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4220
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 320
+            },
+            "fuzzy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 294
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 996
+            },
+            "accuracy": 1.0
+          }
+        },
+        "fresh_sim_per_attack": {
+          "normal": {
+            "windows": 1800,
+            "false_positive_rate": 0.0
+          },
+          "dos": {
+            "attack_windows": 320,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "fuzzy": {
+            "attack_windows": 294,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "rpm_spoof": {
+            "attack_windows": 336,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "gear_spoof": {
+            "attack_windows": 343,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "steering_spoof": {
+            "attack_windows": 317,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          }
+        },
+        "on_hcrl_heldout_per_file": {
+          "0": {
+            "windows": 7026,
+            "accuracy": 0.9878
+          },
+          "1": {
+            "windows": 7366,
+            "accuracy": 0.9867
+          },
+          "2": {
+            "windows": 6077,
+            "accuracy": 0.9898
+          },
+          "3": {
+            "windows": 1267,
+            "accuracy": 1.0
+          },
+          "4": {
+            "windows": 6084,
+            "accuracy": 0.988
+          }
+        }
+      },
+      "rf_synthetic": {
+        "on_hcrl_heldout": {
+          "all": {
+            "normal": {
+              "precision": 0.9889,
+              "recall": 0.9924,
+              "f1": 0.9907,
+              "support": 23931
+            },
+            "dos": {
+              "precision": 0.9745,
+              "recall": 0.9254,
+              "f1": 0.9493,
+              "support": 1032
+            },
+            "fuzzy": {
+              "precision": 0.8993,
+              "recall": 0.9924,
+              "f1": 0.9436,
+              "support": 1575
+            },
+            "spoofing": {
+              "precision": 0.9595,
+              "recall": 0.8128,
+              "f1": 0.8801,
+              "support": 1282
+            },
+            "accuracy": 0.9817
+          },
+          "settled": {
+            "normal": {
+              "precision": 0.9923,
+              "recall": 1.0,
+              "f1": 0.9961,
+              "support": 23330
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 0.9283,
+              "f1": 0.9628,
+              "support": 879
+            },
+            "fuzzy": {
+              "precision": 0.9561,
+              "recall": 1.0,
+              "f1": 0.9775,
+              "support": 1371
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 0.826,
+              "f1": 0.9047,
+              "support": 1040
+            },
+            "accuracy": 0.9908
+          }
+        },
+        "on_synthetic_heldout": {
+          "all": {
+            "normal": {
+              "precision": 0.9914,
+              "recall": 0.991,
+              "f1": 0.9912,
+              "support": 5103
+            },
+            "dos": {
+              "precision": 0.9454,
+              "recall": 0.9454,
+              "f1": 0.9454,
+              "support": 183
+            },
+            "fuzzy": {
+              "precision": 0.9298,
+              "recall": 0.9408,
+              "f1": 0.9353,
+              "support": 169
+            },
+            "spoofing": {
+              "precision": 0.9486,
+              "recall": 0.9486,
+              "f1": 0.9486,
+              "support": 545
+            },
+            "accuracy": 0.9843
+          },
+          "settled": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4983
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 157
+            },
+            "fuzzy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 143
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 471
+            },
+            "accuracy": 1.0
+          }
+        },
+        "on_fresh_sim": {
+          "all": {
+            "normal": {
+              "precision": 0.9797,
+              "recall": 0.9813,
+              "f1": 0.9805,
+              "support": 4436
+            },
+            "dos": {
+              "precision": 0.9539,
+              "recall": 0.9462,
+              "f1": 0.9501,
+              "support": 372
+            },
+            "fuzzy": {
+              "precision": 0.9308,
+              "recall": 0.9472,
+              "f1": 0.939,
+              "support": 341
+            },
+            "spoofing": {
+              "precision": 0.9562,
+              "recall": 0.9479,
+              "f1": 0.952,
+              "support": 1151
+            },
+            "accuracy": 0.9713
+          },
+          "settled": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4220
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 320
+            },
+            "fuzzy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 294
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 996
+            },
+            "accuracy": 1.0
+          }
+        },
+        "fresh_sim_per_attack": {
+          "normal": {
+            "windows": 1800,
+            "false_positive_rate": 0.0
+          },
+          "dos": {
+            "attack_windows": 320,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "fuzzy": {
+            "attack_windows": 294,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "rpm_spoof": {
+            "attack_windows": 336,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "gear_spoof": {
+            "attack_windows": 343,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "steering_spoof": {
+            "attack_windows": 317,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          }
+        },
+        "on_hcrl_heldout_per_file": {
+          "0": {
+            "windows": 7026,
+            "accuracy": 0.9806
+          },
+          "1": {
+            "windows": 7366,
+            "accuracy": 0.9878
+          },
+          "2": {
+            "windows": 6077,
+            "accuracy": 0.9705
+          },
+          "3": {
+            "windows": 1267,
+            "accuracy": 1.0
+          },
+          "4": {
+            "windows": 6084,
+            "accuracy": 0.9827
+          }
+        }
+      },
+      "rf_hcrl_plus_synthetic": {
+        "on_hcrl_heldout": {
+          "all": {
+            "normal": {
+              "precision": 0.9996,
+              "recall": 0.9871,
+              "f1": 0.9933,
+              "support": 23931
+            },
+            "dos": {
+              "precision": 0.9287,
+              "recall": 0.9971,
+              "f1": 0.9617,
+              "support": 1032
+            },
+            "fuzzy": {
+              "precision": 0.9396,
+              "recall": 0.9975,
+              "f1": 0.9677,
+              "support": 1575
+            },
+            "spoofing": {
+              "precision": 0.907,
+              "recall": 0.9969,
+              "f1": 0.9498,
+              "support": 1282
+            },
+            "accuracy": 0.9885
+          },
+          "settled": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 23330
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 879
+            },
+            "fuzzy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1371
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 1040
+            },
+            "accuracy": 1.0
+          }
+        },
+        "on_synthetic_heldout": {
+          "all": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 0.982,
+              "f1": 0.9909,
+              "support": 5103
+            },
+            "dos": {
+              "precision": 0.9015,
+              "recall": 1.0,
+              "f1": 0.9482,
+              "support": 183
+            },
+            "fuzzy": {
+              "precision": 0.9135,
+              "recall": 1.0,
+              "f1": 0.9548,
+              "support": 169
+            },
+            "spoofing": {
+              "precision": 0.9068,
+              "recall": 1.0,
+              "f1": 0.9511,
+              "support": 545
+            },
+            "accuracy": 0.9847
+          },
+          "settled": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4983
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 157
+            },
+            "fuzzy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 143
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 471
+            },
+            "accuracy": 1.0
+          }
+        },
+        "on_fresh_sim": {
+          "all": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 0.9628,
+              "f1": 0.981,
+              "support": 4436
+            },
+            "dos": {
+              "precision": 0.9185,
+              "recall": 1.0,
+              "f1": 0.9575,
+              "support": 372
+            },
+            "fuzzy": {
+              "precision": 0.9142,
+              "recall": 1.0,
+              "f1": 0.9552,
+              "support": 341
+            },
+            "spoofing": {
+              "precision": 0.9201,
+              "recall": 1.0,
+              "f1": 0.9584,
+              "support": 1151
+            },
+            "accuracy": 0.9738
+          },
+          "settled": {
+            "normal": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 4220
+            },
+            "dos": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 320
+            },
+            "fuzzy": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 294
+            },
+            "spoofing": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "support": 996
+            },
+            "accuracy": 1.0
+          }
+        },
+        "fresh_sim_per_attack": {
+          "normal": {
+            "windows": 1800,
+            "false_positive_rate": 0.0
+          },
+          "dos": {
+            "attack_windows": 320,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "fuzzy": {
+            "attack_windows": 294,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "rpm_spoof": {
+            "attack_windows": 336,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "gear_spoof": {
+            "attack_windows": 343,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          },
+          "steering_spoof": {
+            "attack_windows": 317,
+            "recall": 1.0,
+            "correct_class": 1.0,
+            "false_positive_rate_between_bursts": 0.0
+          }
+        },
+        "on_hcrl_heldout_per_file": {
+          "0": {
+            "windows": 7026,
+            "accuracy": 0.9876
+          },
+          "1": {
+            "windows": 7366,
+            "accuracy": 0.9867
+          },
+          "2": {
+            "windows": 6077,
+            "accuracy": 0.9898
+          },
+          "3": {
+            "windows": 1267,
+            "accuracy": 1.0
+          },
+          "4": {
+            "windows": 6084,
+            "accuracy": 0.988
+          }
+        }
+      }
+    },
+    "feature_medians_settled": {
+      "normal": {
+        "total_ratio": {
+          "hcrl_median": 0.95,
+          "sim_median": 1.0
+        },
+        "max_known_ratio": {
+          "hcrl_median": 1.0,
+          "sim_median": 1.001
+        },
+        "unknown_fps": {
+          "hcrl_median": 0.0,
+          "sim_median": 0.0
+        },
+        "n_unknown_ids": {
+          "hcrl_median": 0.0,
+          "sim_median": 0.0
+        },
+        "max_unknown_id_fps": {
+          "hcrl_median": 0.0,
+          "sim_median": 0.0
+        },
+        "bus_load_pct": {
+          "hcrl_median": 49.0,
+          "sim_median": 51.134
+        }
+      },
+      "dos": {
+        "total_ratio": {
+          "hcrl_median": 0.318,
+          "sim_median": 0.326
+        },
+        "max_known_ratio": {
+          "hcrl_median": 0.32,
+          "sim_median": 0.4
+        },
+        "unknown_fps": {
+          "hcrl_median": 338.0,
+          "sim_median": 340.0
+        },
+        "n_unknown_ids": {
+          "hcrl_median": 1.0,
+          "sim_median": 1.0
+        },
+        "max_unknown_id_fps": {
+          "hcrl_median": 338.0,
+          "sim_median": 340.0
+        },
+        "bus_load_pct": {
+          "hcrl_median": 16.0,
+          "sim_median": 16.734
+        }
+      },
+      "fuzzy": {
+        "total_ratio": {
+          "hcrl_median": 0.264,
+          "sim_median": 0.305
+        },
+        "max_known_ratio": {
+          "hcrl_median": 0.4,
+          "sim_median": 0.4
+        },
+        "unknown_fps": {
+          "hcrl_median": 202.0,
+          "sim_median": 216.0
+        },
+        "n_unknown_ids": {
+          "hcrl_median": 99.0,
+          "sim_median": 106.0
+        },
+        "max_unknown_id_fps": {
+          "hcrl_median": 4.0,
+          "sim_median": 4.0
+        },
+        "bus_load_pct": {
+          "hcrl_median": 14.0,
+          "sim_median": 15.748
+        }
+      },
+      "spoofing": {
+        "total_ratio": {
+          "hcrl_median": 0.974,
+          "sim_median": 1.035
+        },
+        "max_known_ratio": {
+          "hcrl_median": 6.72,
+          "sim_median": 6.725
+        },
+        "unknown_fps": {
+          "hcrl_median": 0.0,
+          "sim_median": 0.0
+        },
+        "n_unknown_ids": {
+          "hcrl_median": 0.0,
+          "sim_median": 0.0
+        },
+        "max_unknown_id_fps": {
+          "hcrl_median": 0.0,
+          "sim_median": 0.0
+        },
+        "bus_load_pct": {
+          "hcrl_median": 50.0,
+          "sim_median": 51.854
+        }
+      }
+    }
+  },
+  "deployed_training_source": "hcrl+synthetic"
+}

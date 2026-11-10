@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Car Controller (simulator)</title>
+<style>
+:root{--bg:#10141a;--card:#1a212b;--fg:#e6edf3;--mut:#8b98a8;--acc:#3fb950;--bad:#f85149;--warn:#d29922;--line:#2b3542}
+*{box-sizing:border-box}body{margin:0;font:14px system-ui,sans-serif;background:var(--bg);color:var(--fg)}
+header{padding:12px 16px;border-bottom:1px solid var(--line);font-weight:600}
+#tabs{display:flex;gap:6px;padding:10px 16px}
+.tab{padding:6px 14px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--fg);cursor:pointer}
+.tab.on{background:var(--acc);color:#000}
+main{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;padding:0 16px 16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px}
+.card h3{margin:0 0 8px;font-size:13px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.row{display:grid;grid-template-columns:110px 1fr 56px;align-items:center;gap:8px;margin:6px 0}
+.row input[type=range]{width:100%}.row b{text-align:right;font-variant-numeric:tabular-nums}
+button{background:var(--line);color:var(--fg);border:0;border-radius:6px;padding:6px 10px;cursor:pointer;margin:2px}
+button:hover{filter:brightness(1.2)}
+label.t{display:flex;align-items:center;gap:8px;margin:6px 0;cursor:pointer}
+label.t.atk input:checked+span{color:var(--bad);font-weight:600}
+label.t.flt input:checked+span{color:var(--warn);font-weight:600}
+table{width:100%;border-collapse:collapse}td{padding:2px 0}td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+.ok{color:var(--acc)}.bad{color:var(--bad)}
+#wheel{display:block;margin:0 auto}
+small.d{display:block;color:var(--mut);font-size:11px;margin:-2px 0 6px 24px}
+code{font-size:11px;color:var(--mut);word-break:break-all}
+</style></head><body>
+<header>Car Controller &mdash; simulator (ESP32 bench car stand-in, HCRL / Sonata spec)</header>
+<div id="tabs"></div>
+<main id="main"></main>
+<script>
+const FAULTS=["overheat","battery_drain","sensor_inconsistency"],
+ATTACKS=["dos","fuzzy","rpm_spoof","gear_spoof","steering_spoof"],
+ATTACK_INFO={dos:"ID 0x000, zero payload, 1 frame / 0.3 ms (~3300/s): floods the bus.",
+fuzzy:"Random ID + random payload, 1 frame / 0.5 ms (~2000/s).",
+rpm_spoof:"Forged RPM message 0x316 (6500 rpm), 1 frame / ms.",
+gear_spoof:"Forged gear message 0x43F (gear 1), 1 frame / ms.",
+steering_spoof:"Extra: forged steering message, alternating +/-450 deg, 1 frame / ms."},TUNNEL=["replay","tamper","wrong_key"],
+PRESETS=["idle","city","highway","hard_brake"];
+const SLIDERS=[["speed_kmh","Speed km/h",0,200,1],["steering_deg","Steering deg",-540,540,1],
+["throttle_pct","Throttle %",0,100,1],["brake_pct","Brake %",0,100,1],
+["coolant_c","Coolant setpt C",60,130,1],["battery_v","Battery setpt V",10.5,14.8,0.1],
+["rpm","Manual RPM",0,8000,50],["gear","Manual gear",0,6,1]];
+let cur=null,built=null,cars=[];
+const $=id=>document.getElementById(id);
+async function post(p,b){const r=await fetch(`/api/cars/${cur}/${p}`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});return r.json();}
+function toggles(title,names,cls,path){return `<div class="card"><h3>${title}</h3>`+names.map(n=>
+`<label class="t ${cls}"><input type="checkbox" data-p="${path}" data-n="${n}"><span>${n}</span></label>`).join("")+`</div>`;}
+function attackCard(){return `<div class="card"><h3>CAN attacks (HCRL)</h3>`+ATTACKS.map(n=>
+`<label class="t atk"><input type="checkbox" data-p="attacks" data-n="${n}"><span>${n}</span><button data-burst="${n}" title="on for 4 s, then off">burst 4 s</button></label><small class="d">${ATTACK_INFO[n]}</small>`).join("")+`</div>`;}
+function build(){
+ built=cur;
+ $("main").innerHTML=`
+ <div class="card"><h3>Driving</h3>
+ <svg id="wheel" width="120" height="120" viewBox="-60 -60 120 120"><g id="wg"><circle r="50" fill="none" stroke="#8b98a8" stroke-width="8"/><line x1="-50" y1="0" x2="50" y2="0" stroke="#8b98a8" stroke-width="6"/><line x1="0" y1="0" x2="0" y2="50" stroke="#8b98a8" stroke-width="6"/><circle r="6" cy="-50" fill="#f85149"/></g></svg>
+ ${SLIDERS.map(([k,l,a,b,s])=>`<div class="row"><span>${l}</span><input type="range" id="s_${k}" min="${a}" max="${b}" step="${s}" data-k="${k}"><b id="v_${k}"></b></div>`).join("")}
+ <label class="t"><input type="checkbox" id="auto_rpm"><span>Auto RPM / gear</span></label>
+ <div>${PRESETS.map(p=>`<button data-preset="${p}">${p}</button>`).join("")}</div></div>
+ ${toggles("Faults",FAULTS,"flt","faults")}${attackCard()}${toggles("Tunnel attacks",TUNNEL,"atk","tunnel")}
+ <div class="card"><h3>Reported state</h3><table id="state"></table></div>
+ <div class="card"><h3>Product module link</h3><table id="link"></table><code id="cipher"></code></div>`;
+ document.querySelectorAll("input[type=range]").forEach(e=>{
+  e.oninput=()=>{$("v_"+e.dataset.k).textContent=e.value;post("controls",{[e.dataset.k]:+e.value});};});
+ $("auto_rpm").onchange=e=>post("controls",{auto_rpm:e.target.checked});
+ document.querySelectorAll("input[data-p]").forEach(e=>e.onchange=()=>post(e.dataset.p,{[e.dataset.n]:e.checked}));
+ document.querySelectorAll("button[data-burst]").forEach(b=>b.onclick=()=>post("burst",{attack:b.dataset.burst,seconds:4}));
+ document.querySelectorAll("button[data-preset]").forEach(b=>b.onclick=async()=>{const c=await post("preset",{name:b.dataset.preset});sync(c,true);});
+ const c=cars.find(x=>x.device_id==cur);sync(c,true);
+}
+function sync(c,force){
+ SLIDERS.forEach(([k])=>{const e=$("s_"+k);if(force||document.activeElement!==e){e.value=c.controls[k];}$("v_"+k).textContent=c.controls[k];});
+ $("auto_rpm").checked=c.controls.auto_rpm;
+ document.querySelectorAll("input[data-p]").forEach(e=>{const src=e.dataset.p=="faults"?c.faults:e.dataset.p=="attacks"?c.attacks:Object.keys(c.tunnel).filter(k=>c.tunnel[k]);e.checked=src.includes(e.dataset.n);});
+}
+function render(c){
+ $("wg").setAttribute("transform",`rotate(${c.state.steering_deg/3})`);
+ $("state").innerHTML=Object.entries(c.state).map(([k,v])=>`<tr><td>${k}</td><td>${v}</td></tr>`).join("");
+ const l=c.link;
+ $("link").innerHTML=`<tr><td>connected</td><td class="${l.connected?"ok":"bad"}">${l.connected}</td></tr>`+
+ ["packets_sent","replays_sent","tampered_sent","handshakes_ok","handshake_failures"].map(k=>`<tr><td>${k}</td><td>${l[k]}</td></tr>`).join("")+
+ `<tr><td>last_error</td><td class="bad">${l.last_error||""}</td></tr>`;
+ $("cipher").textContent=l.last_cipher_hex?"cipher: "+l.last_cipher_hex:"";
+}
+async function poll(){
+ try{
+  cars=await (await fetch("/api/cars")).json();
+  if(!cur&&cars.length)cur=cars[0].device_id;
+  $("tabs").innerHTML=cars.map(c=>`<div class="tab ${c.device_id==cur?"on":""}" data-id="${c.device_id}">#${c.device_id} ${c.name}</div>`).join("");
+  document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{cur=+t.dataset.id;});
+  if(built!==cur&&cur)build();
+  const c=cars.find(x=>x.device_id==cur);if(c){render(c);sync(c,false);}
+ }catch(e){}
+ setTimeout(poll,200);
+}
+poll();
+</script></body></html>

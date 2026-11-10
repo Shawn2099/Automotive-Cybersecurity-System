@@ -1,0 +1,432 @@
+{
+  "profile_id": "hyundai_sonata_hcrl",
+  "brand": "Hyundai",
+  "model": "YF Sonata (HCRL Car-Hacking spec)",
+  "description": "CAN layout of the car used for the HCRL Car-Hacking dataset. Signal bit layouts from commaai/opendbc generator/hyundai/hyundai_can.dbc (Intel / little-endian). Periods and base payloads measured from HCRL normal_run_data.txt (27 IDs); spoof payloads copied from the HCRL attack files.",
+  "source": "https://github.com/commaai/opendbc/blob/master/opendbc/dbc/generator/hyundai/hyundai_can.dbc",
+  "periods_source": "hcrl_measured",
+  "messages": [
+    {
+      "id": 790,
+      "name": "EMS11",
+      "dlc": 8,
+      "period_ms": 10.002,
+      "hcrl_attack_target": "rpm_spoof",
+      "signals": {
+        "rpm": {
+          "start": 16,
+          "len": 16,
+          "factor": 0.25,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 16383.75,
+          "dbc": "N"
+        },
+        "speed_kmh": {
+          "start": 48,
+          "len": 8,
+          "factor": 1.0,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 254,
+          "dbc": "VS"
+        }
+      },
+      "data": "052A74092A22007B",
+      "in_hcrl": true,
+      "spoof_data": "452924FF292400FF"
+    },
+    {
+      "id": 809,
+      "name": "EMS12",
+      "dlc": 8,
+      "period_ms": 10.001,
+      "signals": {
+        "coolant_c": {
+          "start": 8,
+          "len": 8,
+          "factor": 0.75,
+          "offset": -48,
+          "signed": false,
+          "min": -48,
+          "max": 143.25,
+          "dbc": "TEMP_ENG"
+        }
+      },
+      "data": "0CBD7F1412200014",
+      "in_hcrl": true
+    },
+    {
+      "id": 608,
+      "name": "EMS16",
+      "dlc": 8,
+      "period_ms": 10.0,
+      "signals": {
+        "throttle_pct": {
+          "start": 8,
+          "len": 8,
+          "factor": 0.390625,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 99.6,
+          "dbc": "TQI",
+          "note": "engine torque % used as throttle proxy"
+        }
+      },
+      "data": "1F2A2A30FF8F7731",
+      "in_hcrl": true
+    },
+    {
+      "id": 688,
+      "name": "SAS11",
+      "dlc": 5,
+      "period_ms": 10.007,
+      "signals": {
+        "steering_deg": {
+          "start": 0,
+          "len": 16,
+          "factor": 0.1,
+          "offset": 0,
+          "signed": true,
+          "min": -3276.8,
+          "max": 3276.7,
+          "dbc": "SAS_Angle"
+        }
+      },
+      "data": "2200000752",
+      "in_hcrl": true
+    },
+    {
+      "id": 1087,
+      "name": "TCU_GEAR",
+      "dlc": 8,
+      "period_ms": 10.0,
+      "hcrl_attack_target": "gear_spoof",
+      "assumed": true,
+      "note": "HCRL gear-spoof target (confirmed from gear_dataset.csv). Gear bit layout NOT confirmed: byte0 in real traffic is not a clean gear field, so the decoded gear is indicative only.",
+      "signals": {
+        "gear": {
+          "start": 0,
+          "len": 4,
+          "factor": 1,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 15,
+          "assumed": true,
+          "unverified": true
+        }
+      },
+      "data": "074760FF6B000000",
+      "in_hcrl": true,
+      "spoof_data": "014560FF6B000000"
+    },
+    {
+      "id": 902,
+      "name": "WHL_SPD11",
+      "dlc": 8,
+      "period_ms": 20,
+      "signals": {
+        "whl_fl_kmh": {
+          "start": 0,
+          "len": 14,
+          "factor": 0.03125,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 511.9,
+          "dbc": "WHL_SPD_FL"
+        },
+        "whl_fr_kmh": {
+          "start": 16,
+          "len": 14,
+          "factor": 0.03125,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 511.9,
+          "dbc": "WHL_SPD_FR",
+          "assumed": true
+        },
+        "whl_rl_kmh": {
+          "start": 32,
+          "len": 14,
+          "factor": 0.03125,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 511.9,
+          "dbc": "WHL_SPD_RL",
+          "assumed": true
+        },
+        "whl_rr_kmh": {
+          "start": 48,
+          "len": 14,
+          "factor": 0.03125,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 511.9,
+          "dbc": "WHL_SPD_RR",
+          "assumed": true
+        }
+      },
+      "in_hcrl": false,
+      "note": "Not present on the HCRL capture bus; extra message for signals the PoC needs (layout from opendbc)."
+    },
+    {
+      "id": 544,
+      "name": "ESP12",
+      "dlc": 8,
+      "period_ms": 20,
+      "signals": {
+        "brake_bar": {
+          "start": 0,
+          "len": 12,
+          "factor": 0.1,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 409.5,
+          "dbc": "CYL_PRES",
+          "assumed": true
+        },
+        "long_accel": {
+          "start": 13,
+          "len": 11,
+          "factor": 0.01,
+          "offset": -10.23,
+          "signed": false,
+          "min": -10.23,
+          "max": 10.24,
+          "dbc": "LONG_ACCEL"
+        }
+      },
+      "in_hcrl": false,
+      "note": "Not present on the HCRL capture bus; extra message for signals the PoC needs (layout from opendbc)."
+    },
+    {
+      "id": 1265,
+      "name": "CLU11",
+      "dlc": 4,
+      "period_ms": 20,
+      "signals": {
+        "clu_speed_kmh": {
+          "start": 8,
+          "len": 9,
+          "factor": 0.5,
+          "offset": 0,
+          "signed": false,
+          "min": 0,
+          "max": 255.5,
+          "dbc": "CF_Clu_Vanz"
+        }
+      },
+      "in_hcrl": false,
+      "note": "Not present on the HCRL capture bus; extra message for signals the PoC needs (layout from opendbc)."
+    },
+    {
+      "id": 1353,
+      "name": "BAT11",
+      "dlc": 8,
+      "period_ms": 100,
+      "signals": {
+        "battery_v": {
+          "start": 24,
+          "len": 14,
+          "factor": 0.001,
+          "offset": 6.0,
+          "signed": false,
+          "min": 6.0,
+          "max": 18.0,
+          "dbc": "BAT_SNSR_V"
+        }
+      },
+      "in_hcrl": false,
+      "note": "Not present on the HCRL capture bus; extra message for signals the PoC needs (layout from opendbc)."
+    }
+  ],
+  "background": [
+    {
+      "id": 2,
+      "name": "HCRL_0x002",
+      "dlc": 8,
+      "period_ms": 9.989,
+      "data": "000000000008026A"
+    },
+    {
+      "id": 160,
+      "name": "HCRL_0x0A0",
+      "dlc": 8,
+      "period_ms": 99.933,
+      "data": "6A867C0900210200"
+    },
+    {
+      "id": 161,
+      "name": "HCRL_0x0A1",
+      "dlc": 8,
+      "period_ms": 99.932,
+      "data": "8080000029000000"
+    },
+    {
+      "id": 304,
+      "name": "HCRL_0x130",
+      "dlc": 8,
+      "period_ms": 9.994,
+      "data": "FB7F00FF84810B15"
+    },
+    {
+      "id": 305,
+      "name": "HCRL_0x131",
+      "dlc": 8,
+      "period_ms": 9.999,
+      "data": "09800000847F0738"
+    },
+    {
+      "id": 320,
+      "name": "HCRL_0x140",
+      "dlc": 8,
+      "period_ms": 10.0,
+      "data": "00000000022023DC"
+    },
+    {
+      "id": 339,
+      "name": "HCRL_0x153",
+      "dlc": 8,
+      "period_ms": 9.999,
+      "data": "000000FF00FF0000"
+    },
+    {
+      "id": 399,
+      "name": "HCRL_0x18F",
+      "dlc": 8,
+      "period_ms": 10.0,
+      "data": "FE300000003C0000"
+    },
+    {
+      "id": 497,
+      "name": "HCRL_0x1F1",
+      "dlc": 8,
+      "period_ms": 19.999,
+      "data": "0088000000000000"
+    },
+    {
+      "id": 672,
+      "name": "HCRL_0x2A0",
+      "dlc": 8,
+      "period_ms": 10.002,
+      "data": "60006B1D0104DD00"
+    },
+    {
+      "id": 704,
+      "name": "HCRL_0x2C0",
+      "dlc": 8,
+      "period_ms": 9.991,
+      "data": "1400000000000000"
+    },
+    {
+      "id": 848,
+      "name": "HCRL_0x350",
+      "dlc": 8,
+      "period_ms": 9.997,
+      "data": "052834666A000015"
+    },
+    {
+      "id": 880,
+      "name": "HCRL_0x370",
+      "dlc": 8,
+      "period_ms": 10.0,
+      "data": "0020000000000000"
+    },
+    {
+      "id": 1072,
+      "name": "HCRL_0x430",
+      "dlc": 8,
+      "period_ms": 19.999,
+      "data": "0000000000000000"
+    },
+    {
+      "id": 1088,
+      "name": "HCRL_0x440",
+      "dlc": 8,
+      "period_ms": 9.999,
+      "data": "FF010000FF000000"
+    },
+    {
+      "id": 1201,
+      "name": "HCRL_0x4B1",
+      "dlc": 8,
+      "period_ms": 19.998,
+      "data": "26206625000000D1"
+    },
+    {
+      "id": 1264,
+      "name": "HCRL_0x4F0",
+      "dlc": 8,
+      "period_ms": 20.002,
+      "data": "0000008000600314"
+    },
+    {
+      "id": 1349,
+      "name": "HCRL_0x545",
+      "dlc": 8,
+      "period_ms": 10.001,
+      "data": "D800008E00000000"
+    },
+    {
+      "id": 1440,
+      "name": "HCRL_0x5A0",
+      "dlc": 8,
+      "period_ms": 999.12,
+      "data": "0000000000000000"
+    },
+    {
+      "id": 1442,
+      "name": "HCRL_0x5A2",
+      "dlc": 8,
+      "period_ms": 999.125,
+      "data": "0400A50300000000"
+    },
+    {
+      "id": 1520,
+      "name": "HCRL_0x5F0",
+      "dlc": 2,
+      "period_ms": 49.999,
+      "data": "F400"
+    },
+    {
+      "id": 1680,
+      "name": "HCRL_0x690",
+      "dlc": 8,
+      "period_ms": 99.997,
+      "data": "00000000A0210000"
+    }
+  ],
+  "attack_behaviour": {
+    "_source": "measured from HCRL attack CSVs: median over 100 ms windows with >=5 injected frames",
+    "dos": {
+      "inject_fps": 340,
+      "legit_keep": 0.151
+    },
+    "fuzzy": {
+      "inject_fps": 220,
+      "legit_keep": 0.195
+    },
+    "rpm_spoof": {
+      "inject_fps": 630,
+      "legit_keep": 0.757
+    },
+    "gear_spoof": {
+      "inject_fps": 580,
+      "legit_keep": 0.703
+    },
+    "steering_spoof": {
+      "inject_fps": 600,
+      "legit_keep": 0.73,
+      "_note": "not in HCRL; assumed like rpm/gear spoof"
+    }
+  }
+}

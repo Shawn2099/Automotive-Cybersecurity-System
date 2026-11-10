@@ -1,0 +1,152 @@
+{
+  "training_source": "hcrl+synthetic",
+  "note": "RandomForest trained on real HCRL Car-Hacking windows plus simulator windows (100 ms), evaluated on the last 25 % of each file (time-contiguous hold-out). 'all' includes the ~0.6 s after each label change (rate-smoothing lag); 'settled' excludes it. IsolationForest is still trained on synthetic health data. tunnel_attack is event-based and not learned from traffic.",
+  "dataset": {
+    "train_batches": 85129,
+    "test_batches": 27820,
+    "label_counts": {
+      "dos": 14056,
+      "fuzzy": 15822,
+      "normal": 60030,
+      "spoofing": 21366
+    }
+  },
+  "isolation_forest": {
+    "training_source": "synthetic",
+    "train_batches": 10668,
+    "mean_score_clean_heldout": 0.08322990194532306,
+    "frac_clean_heldout_above_0.65": 0.007262709742048585,
+    "mean_score_fault_heldout": 0.3105939496878952,
+    "frac_fault_heldout_above_0.65": 0.11081081081081082
+  },
+  "random_forest_report_heldout_all": {
+    "dos": {
+      "precision": 0.9287003610108303,
+      "recall": 0.997093023255814,
+      "f1-score": 0.9616822429906542,
+      "support": 1032.0
+    },
+    "fuzzy": {
+      "precision": 0.9395933014354066,
+      "recall": 0.9974603174603175,
+      "f1-score": 0.9676624576532183,
+      "support": 1575.0
+    },
+    "normal": {
+      "precision": 0.9996191443442936,
+      "recall": 0.9870878776482387,
+      "f1-score": 0.9933139901602119,
+      "support": 23931.0
+    },
+    "spoofing": {
+      "precision": 0.9070262597586941,
+      "recall": 0.9968798751950078,
+      "f1-score": 0.9498327759197325,
+      "support": 1282.0
+    },
+    "accuracy": 0.9884974838245866,
+    "macro avg": {
+      "precision": 0.9437347666373062,
+      "recall": 0.9946302733898446,
+      "f1-score": 0.9681228666809543,
+      "support": 27820.0
+    },
+    "weighted avg": {
+      "precision": 0.9893232074276734,
+      "recall": 0.9884974838245866,
+      "f1-score": 0.9886846571827211,
+      "support": 27820.0
+    }
+  },
+  "random_forest_report_heldout_settled": {
+    "dos": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 879.0
+    },
+    "fuzzy": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1371.0
+    },
+    "normal": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 23330.0
+    },
+    "spoofing": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 1040.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 26620.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 26620.0
+    }
+  },
+  "random_forest_report_synthetic_heldout": {
+    "dos": {
+      "precision": 0.9014778325123153,
+      "recall": 1.0,
+      "f1-score": 0.9481865284974094,
+      "support": 183.0
+    },
+    "fuzzy": {
+      "precision": 0.9135135135135135,
+      "recall": 1.0,
+      "f1-score": 0.9548022598870056,
+      "support": 169.0
+    },
+    "normal": {
+      "precision": 1.0,
+      "recall": 0.9819713893787968,
+      "f1-score": 0.9909036978445719,
+      "support": 5103.0
+    },
+    "spoofing": {
+      "precision": 0.9068219633943427,
+      "recall": 1.0,
+      "f1-score": 0.9511343804537522,
+      "support": 545.0
+    },
+    "accuracy": 0.9846666666666667,
+    "macro avg": {
+      "precision": 0.9304533273550429,
+      "recall": 0.9954928473446992,
+      "f1-score": 0.9612567166706848,
+      "support": 6000.0
+    },
+    "weighted avg": {
+      "precision": 0.9860953661972423,
+      "recall": 0.9846666666666667,
+      "f1-score": 0.9849715873473459,
+      "support": 6000.0
+    }
+  },
+  "feature_names": [
+    "total_ratio",
+    "max_known_ratio",
+    "rpm_ratio",
+    "gear_ratio",
+    "steering_ratio",
+    "unknown_fps",
+    "n_unknown_ids",
+    "max_unknown_id_fps",
+    "bus_load_pct",
+    "steering_rate"
+  ],
+  "train_seconds": 23.5
+}

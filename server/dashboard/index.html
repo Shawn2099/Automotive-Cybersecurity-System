@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vehicle Health &amp; Cyber Monitor</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>Vehicle Health <span>&amp; Cyber Monitor</span></h1>
+  <div class="hdr-right">
+    <span id="wsState" class="pill bad">offline</span>
+    <button id="muteBtn" class="btn">Voice: on</button>
+  </div>
+</header>
+
+<section id="cars" class="cards"></section>
+<div class="toolbar"><button id="addBtn" class="btn primary">+ Add car</button></div>
+
+<dialog id="addDlg">
+  <form id="addForm" method="dialog">
+    <h2>Add car</h2>
+    <div id="addFields">
+      <p class="muted">Registers the car in the portal. It streams data only once an ESP32 device and a CAN profile exist for it.</p>
+      <div class="fgrid">
+        <label>Brand<input name="brand" required placeholder="e.g. Maruti Suzuki"></label>
+        <label>Model<input name="model" required placeholder="e.g. Swift ZXi"></label>
+        <label>Name<input name="name" required placeholder="e.g. Daily Swift"></label>
+        <label>Plate<input name="plate" required placeholder="e.g. KL-07-AB-1234"></label>
+        <label>CAN profile<select name="can_profile" id="profileSel"></select></label>
+        <label>Device ID (optional)<input name="device_id" type="number" min="1" max="65535" placeholder="auto"></label>
+      </div>
+      <div id="profInfo" class="muted small"></div>
+      <div class="muted small" id="addMsg"></div>
+      <div class="dlgbtns"><button type="button" class="btn" id="addCancel">Cancel</button><button class="btn primary" type="submit">Register</button></div>
+    </div>
+    <div id="provCard" hidden></div>
+  </form>
+</dialog>
+
+<dialog id="editDlg">
+  <form id="editForm" method="dialog">
+    <h2>Edit car</h2>
+    <div class="fgrid">
+      <label>Name<input name="name" required></label>
+      <label>Plate<input name="plate" required></label>
+      <label>CAN profile<select name="can_profile" id="editProfileSel"></select></label>
+    </div>
+    <div class="muted small" id="editMsg"></div>
+    <div class="dlgbtns"><button type="button" class="btn" id="editCancel">Cancel</button><button class="btn primary" type="submit">Save</button></div>
+  </form>
+</dialog>
+
+<main id="main" class="grid">
+  <section id="empty" class="panel emptyp" hidden></section>
+  <section class="panel hero" id="heroP">
+    <h2><span id="carTitle">No vehicle selected</span><span><button class="btn sm" id="editBtn">Edit</button></span></h2>
+    <div class="gauges">
+      <div class="g"><canvas id="gHealth" width="220" height="150"></canvas><label>Overall health</label></div>
+      <div class="g"><canvas id="gCyber" width="220" height="150"></canvas><label>Cyber risk</label></div>
+    </div>
+    <div id="attack" class="attack">attack class: --</div>
+    <div class="bars" id="bars"></div>
+    <div class="muted" id="anom">anomaly score: --</div>
+    <h3>Forecast</h3>
+    <ul id="forecast" class="plain"><li class="muted">no predicted threshold crossings</li></ul>
+  </section>
+
+  <section class="panel live" id="liveP">
+    <h2>Live signals</h2>
+    <div class="gauges small">
+      <div class="g"><canvas id="gSpeed" width="170" height="120"></canvas><label>Speed km/h</label></div>
+      <div class="g"><canvas id="gRpm" width="170" height="120"></canvas><label>RPM</label></div>
+      <div class="g"><canvas id="wheel" width="120" height="120"></canvas><label id="steerLbl">Steering wheel</label></div>
+    </div>
+    <div class="meters" id="meters"></div>
+    <h3>Wheel &amp; cluster speed</h3>
+    <div class="meters" id="wheels"></div>
+    <div class="flags" id="flags"></div>
+    <h3>Last 60 s</h3>
+    <div class="spark"><canvas id="spark" width="520" height="120"></canvas></div>
+    <div class="legend"><i style="background:var(--warn)"></i>coolant &deg;C <i style="background:var(--accent)"></i>battery V</div>
+  </section>
+
+  <section class="panel feed">
+    <h2>Alerts <label class="chk"><input type="checkbox" id="onlySel"> selected car only</label></h2>
+    <ul id="alerts" class="plain"></ul>
+  </section>
+
+  <section class="panel insp">
+    <h2>Encryption inspector</h2>
+    <div class="cnt"><b id="pOk">0</b> accepted &nbsp; <b id="pBad" class="bad-t">0</b> rejected &nbsp; <span id="lnk" class="muted"></span></div>
+    <h4>Ciphertext (AES-128-GCM, first 32 bytes)</h4>
+    <pre id="cipher">--</pre>
+    <h4>Decrypted batch</h4>
+    <pre id="plain">--</pre>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite
+*.sqlite3
+.venv/
+venv/
+.pytest_cache/
+.env
+
+data/
+
+# HCRL Car-Hacking dataset: academic-use licence, do not redistribute. Put the files in data/hcrl/ locally.
+*.zip
+*.7z
+ml_training/data/*
+!ml_training/data/.gitignore
+**/hcrl_cache/
+*.pkl
+*.npz
+telemetry*.db
